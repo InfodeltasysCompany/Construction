@@ -1,0 +1,123 @@
+.about-us-section {
+  padding: 50px 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: "Poppins", sans-serif;
+}
+
+.about-us-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+}
+
+.text-content {
+  flex: 1 1 50%;
+}
+
+.text-content h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #1a1a1a; /* modern dark charcoal */
+}
+
+.text-content p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.signature {
+  margin-top: 15px;
+  font-style: italic;
+  color: #333;
+}
+
+.signature strong {
+  font-weight: 600;
+}
+
+/* 🌍 Modern Button with Teal-Blue Gradient */
+.modern-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #06beb6, #48b1bf); /* fresh teal/blue gradient */
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(6, 190, 182, 0.25);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modern-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(6, 190, 182, 0.35);
+  background: linear-gradient(135deg, #009688, #004d40); /* deep teal hover */
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.modern-btn:hover .arrow {
+  transform: translateX(4px);
+}
+
+.image-content {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-content img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 10px 25px rgba(72, 177, 191, 0.15); /* soft teal shadow */
+  transition: transform 0.3s ease;
+}
+
+.image-content img:hover {
+  transform: scale(1.04);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-us-content {
+    flex-direction: column;
+  }
+
+  /* Image appears first on mobile */
+  .image-content {
+    order: -1;
+  }
+
+  .text-content, 
+  .image-content {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .text-content h2 {
+    font-size: 26px;
+  }
+
+  .text-content p {
+    font-size: 14px;
+  }
+
+  .image-content img {
+    max-width: 100%;
+  }
+}

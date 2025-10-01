@@ -1,0 +1,94 @@
+/* =========================
+   PROJECTS SECTION
+========================= */
+.projects-section {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  font-family: 'Poppins', sans-serif;
+}
+
+.projects-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+/* Table Wrapper: responsive scroll */
+.table-wrapper {
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  padding: 10px;
+}
+
+/* Table Styling */
+.projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px; /* ensures table stays readable on large screens */
+}
+
+.projects-table thead {
+  background: #2c3e50;
+  color: #fff;
+}
+
+.projects-table th,
+.projects-table td {
+  padding: 14px 16px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.projects-table tbody tr:nth-child(even) {
+  background: #f4f6f8;
+}
+
+.projects-table tbody tr:hover {
+  background: #eaf2f8;
+  transition: 0.3s;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .projects-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .projects-table th,
+  .projects-table td {
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 50px 15px;
+  }
+
+  .projects-table {
+    min-width: 100%;
+  }
+
+  .projects-table th,
+  .projects-table td {
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-title {
+    font-size: 1.5rem;
+  }
+
+  .projects-table th,
+  .projects-table td {
+    padding: 8px;
+    font-size: 0.8rem;
+  }
+}

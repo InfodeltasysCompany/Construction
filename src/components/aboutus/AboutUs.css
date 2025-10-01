@@ -1,0 +1,155 @@
+/* -------------------------------
+   TEAM GALLERY (About Us Images)
+--------------------------------- */
+.team-gallery {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #fceabb, #f8b500);
+  animation: bgFade 8s ease-in-out infinite alternate;
+}
+
+@keyframes bgFade {
+  0% { background: linear-gradient(135deg, #fceabb, #f8b500); }
+  50% { background: linear-gradient(135deg, #f8b500, #fceabb); }
+  100% { background: linear-gradient(135deg, #fceabb, #f8b500); }
+}
+
+.team-gallery-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 40px;
+  animation: fadeDown 1.5s ease;
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.team-gallery-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.team-card {
+  width: 180px;
+  height: 280px;
+  overflow: hidden;
+  transform: skew(-12deg);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: zoomIn 1s ease forwards;
+}
+
+.team-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: skew(12deg) scale(1.2);
+}
+
+.team-card:hover {
+  transform: skew(-12deg) scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.8) skew(-12deg); }
+  to { opacity: 1; transform: scale(1) skew(-12deg); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-gallery-wrapper {
+    gap: 10px;
+  }
+  .team-card {
+    width: 140px;
+    height: 220px;
+  }
+}
+
+/* -------------------------------
+   COMPANY INTRO (Text & Button) - Compact Version
+--------------------------------- */
+.company-intro {
+  text-align: center;
+  padding: 40px 20px; /* Reduced padding top/bottom */
+  margin: 0;           /* Remove any default margin */
+  background: linear-gradient(135deg, #fff, #f7f7f7);
+  position: relative;
+  overflow: hidden;
+}
+
+.company-intro::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(185,115,47,0.15) 20%, transparent 70%);
+  animation: rotateBg 12s linear infinite;
+  z-index: 0;
+}
+
+.company-intro-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 1.5s ease;
+}
+
+.company-intro-container h1 {
+  font-size: 28px;  /* Slightly smaller to fit compact layout */
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px; /* Reduced margin */
+  line-height: 1.4;
+}
+
+.company-intro-container p {
+  font-size: 14px;   /* Slightly smaller text */
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 20px; /* Reduced bottom margin */
+}
+
+.company-intro-container strong {
+  font-weight: 600;
+  color: #b9732f;
+}
+
+.company-show-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #b9732f;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  animation: bounce 2s infinite;
+}
+
+.company-show-more a {
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 2px solid #b9732f;
+  padding-bottom: 3px;
+}
+
+.company-arrow {
+  font-size: 18px;
+  margin-left: 4px;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}

@@ -1,0 +1,97 @@
+.vision-cards-section {
+  background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+  padding: 40px 15px;   /* reduced from 80px 20px */
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.vision-header {
+  max-width: 900px;
+  text-align: center;
+  margin-bottom: 30px; /* reduced from 50px */
+}
+
+.vision-main-heading {
+  font-size: 32px;      /* slightly smaller */
+  color: #1a1a1a;
+  font-weight: 700;
+  margin-bottom: 8px;   /* reduced spacing */
+}
+
+.vision-subheading {
+  font-size: 16px;      /* reduced from 18px */
+  color: #444;
+  line-height: 1.5;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Scroll Container */
+.vision-scroll-container {
+  display: flex;
+  gap: 20px;            /* slightly smaller */
+  width: 100%;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.vision-card {
+  flex: 0 0 300px;      /* narrower */
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;        /* reduced padding inside cards */
+  box-shadow: 0 6px 16px rgba(27, 94, 32, 0.12);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vision-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(27, 94, 32, 0.18);
+}
+
+.vision-icon {
+  font-size: 36px;     /* smaller */
+  margin-bottom: 12px;
+  color: #2e7d32;
+}
+
+.vision-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1b5e20;
+  margin-bottom: 10px;
+}
+
+.vision-description {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vision-main-heading {
+    font-size: 24px;
+  }
+
+  .vision-subheading {
+    font-size: 14px;
+  }
+
+  .vision-title {
+    font-size: 18px;
+  }
+
+  .vision-description {
+    font-size: 13px;
+  }
+
+  .vision-card {
+    flex: 0 0 85%;
+    padding: 18px;  /* tighter on mobile */
+  }
+}

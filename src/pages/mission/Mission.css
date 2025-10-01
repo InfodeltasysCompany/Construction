@@ -1,0 +1,78 @@
+.mission-section {
+  background-image: url('../../assets/2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px; /* For smaller screens */
+}
+
+.mission-overlay {
+  background-color: rgba(0, 0, 0, 0.4); /* Slight dark overlay for readability */
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 1000px;
+}
+
+.mission-header {
+  color: #ffd700; /* Gold-ish header color */
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+.mission-text {
+  color: white;
+  font-size: 2rem;
+  line-height: 1.6;
+  font-weight: 300;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+/* ---------------- Responsive ---------------- */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .mission-header {
+    font-size: 2.5rem;
+  }
+  .mission-text {
+    font-size: 1.8rem;
+  }
+  .mission-overlay {
+    padding: 35px;
+  }
+}
+
+/* Large Mobile */
+@media (max-width: 768px) {
+  .mission-header {
+    font-size: 2.2rem;
+  }
+  .mission-text {
+    font-size: 1.6rem;
+  }
+  .mission-overlay {
+    padding: 30px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .mission-header {
+    font-size: 1.8rem;
+  }
+  .mission-text {
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+  .mission-overlay {
+    padding: 20px;
+  }
+}

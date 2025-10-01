@@ -1,0 +1,131 @@
+/* =========================
+   CENTERED LEADER SECTION
+========================= */
+.leader-section-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* vertical centering */
+  padding: 80px 20px;
+  background: linear-gradient(145deg, #f7f9fb, #e2eaf1);
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  min-height: 100vh; /* ensures vertical centering for large screens */
+}
+
+/* Container: center content vertically and horizontally */
+.leader-container-centered {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; /* vertical alignment inside container */
+  gap: 60px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Image Section */
+.leader-image-centered {
+  flex: 0 0 450px;
+  max-height: 600px; /* prevent image from being too tall */
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  transition: transform 0.5s ease;
+}
+
+.leader-image-centered img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ensures image covers the box */
+  display: block;
+  border-radius: 25px;
+  transition: transform 0.5s ease;
+}
+
+.leader-image-centered:hover img {
+  transform: scale(1.05);
+}
+
+/* Text Section */
+.leader-text-centered {
+  flex: 1 1 500px;
+  background: #ffffff;
+  border-radius: 25px;
+  padding: 50px 40px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+  text-align: left;
+  transition: transform 0.4s ease;
+}
+
+.leader-text-centered:hover {
+  transform: translateY(-8px);
+}
+
+.leader-text-centered h2 {
+  font-size: 38px;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #f2994a, #f2c94c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.leader-text-centered h4 {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.leader-text-centered p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.leader-text-centered strong {
+  color: #f2994a;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 1024px) {
+  .leader-text-centered h2 { font-size: 34px; }
+  .leader-text-centered h4 { font-size: 16px; }
+  .leader-container-centered { gap: 40px; }
+}
+
+@media (max-width: 768px) {
+  .leader-section-centered {
+    padding: 40px 20px; /* equal padding all sides */
+    min-height: auto; /* remove full screen height for mobile */
+  }
+
+  .leader-container-centered {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .leader-image-centered {
+    width: 100%;
+    max-width: 350px;
+    max-height: 400px; /* mobile-friendly */
+  }
+
+  .leader-text-centered {
+    width: 100%;
+    max-width: 90%;
+    padding: 25px 20px;
+    text-align: center; /* center text for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .leader-section-centered { padding: 30px 15px; }
+  .leader-text-centered h2 { font-size: 26px; }
+  .leader-text-centered h4 { font-size: 14px; }
+  .leader-text-centered p { font-size: 14px; line-height: 1.6; }
+  .leader-image-centered { max-width: 280px; max-height: 300px; }
+  .leader-text-centered { padding: 20px 15px; }
+}

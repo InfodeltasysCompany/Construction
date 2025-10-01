@@ -1,0 +1,46 @@
+/* src/components/ServicesSection.css */
+.services-section {
+  text-align: center;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+}
+
+.subtitle {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  font-size: 16px;
+  color: #333;
+}
+
+.services-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.service-card {
+  background: #fff;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card img {
+  width: 100%;
+  height: auto;
+}
+
+.service-title {
+  background-color: #000;
+  color: #fff;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 16px;
+}

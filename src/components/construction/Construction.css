@@ -1,0 +1,162 @@
+/* ---------------- Wrapper ---------------- */
+.construction-wrapper {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+/* ---------------- Hero Section ---------------- */
+.construction-hero {
+  position: relative;
+  background: linear-gradient(135deg, #1e3c72, #2a5298, #1cb5e0); /* Modern gradient */
+  color: white;
+  padding: 120px 20px 160px 20px;
+  text-align: center;
+  overflow: hidden;
+  border-radius: 0 0 50px 50px; /* Smooth curved bottom */
+  box-shadow: 0 10px 50px rgba(0,0,0,0.2);
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-content h1 {
+  font-size: 3.2rem;
+  margin-bottom: 20px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.2);
+}
+
+/* Hero Images */
+.hero-images {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.hero-img {
+  position: absolute;
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  width: 300px;
+  max-width: 30%;
+  transform: translateY(0);
+  transition: transform 0.5s ease;
+}
+
+.hero-img-left {
+  bottom: 10%;
+  left: 5%;
+  animation: float-left 6s ease-in-out infinite;
+}
+
+.hero-img-right {
+  top: 20%;
+  right: 5%;
+  animation: float-right 6s ease-in-out infinite;
+}
+
+/* Float Animations */
+@keyframes float-left {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes float-right {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(20px); }
+}
+
+/* ---------------- Achievements Section ---------------- */
+.construction-achievements {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 80px 20px;
+  background-color: #f5f7fa;
+}
+
+.achievement-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  flex: 1 1 300px;
+  max-width: 350px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.achievement-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.achievement-card h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #0f2027;
+}
+
+.achievement-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* ---------------- Stats Section ---------------- */
+.construction-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 20px;
+  background: linear-gradient(90deg, #2c5364, #203a43, #0f2027);
+  color: white;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+.stat-item h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #ffd700;
+}
+
+.stat-item p {
+  font-size: 1rem;
+  color: #fff;
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 1024px) {
+  .hero-content h1 { font-size: 2.8rem; }
+  .hero-content p { font-size: 1.2rem; }
+  .hero-img { width: 200px; max-width: 40%; }
+}
+
+@media (max-width: 768px) {
+  .construction-achievements, .construction-stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-content h1 { font-size: 2.2rem; }
+  .hero-content p { font-size: 1.1rem; }
+  .hero-images { display: none; }
+}

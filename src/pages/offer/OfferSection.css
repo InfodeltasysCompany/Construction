@@ -1,22 +1,23 @@
-.offer-section {
-  padding: 60px 40px;
-  background: #fff;
+.varanasi-offer-section {
+  padding: 30px 40px 50px; /* Reduced top & bottom padding */
+  background: #f9fafb;
   text-align: center;
+  margin-top: -1%;
 }
 
-.section-title {
+.varanasi-offer-title {
   font-size: 2rem;
-  margin-bottom: 40px;
-  color: #333;
+  margin-bottom: 30px;
+  color: #0a0202;
 }
 
-.offer-grid {
+.varanasi-offer-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
 }
 
-.offer-card {
+.varanasi-offer-card {
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
@@ -25,51 +26,104 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.offer-card:hover {
+.varanasi-offer-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
-.offer-img {
+/* ✅ Show full image without cropping */
+.varanasi-offer-image-wrapper {
   width: 100%;
-  height: 200px;
-  object-fit: cover;
+  height: 240px;
+  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
-.offer-info {
+.varanasi-offer-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
+  background: #fff;
+}
+
+.varanasi-offer-card:hover .varanasi-offer-img {
+  transform: scale(1.03);
+}
+
+.varanasi-offer-info {
   padding: 20px;
 }
 
-.offer-meta {
-  font-size: 0.85rem;
-  color: #888;
-  margin-bottom: 8px;
-}
-
-.offer-info h3 {
+.varanasi-offer-info h3 {
   font-size: 1.2rem;
   color: #222;
   margin-bottom: 10px;
   line-height: 1.4;
 }
 
-.offer-info p {
+.varanasi-offer-info p {
   font-size: 0.95rem;
   color: #555;
   margin-bottom: 15px;
   line-height: 1.5;
 }
 
-.read-more {
-  display: inline-block;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #e67e22;
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: all 0.3s ease;
+/* 🔸 Responsive Adjustments */
+@media (max-width: 1024px) {
+  .varanasi-offer-title {
+    font-size: 1.8rem;
+  }
+  .varanasi-offer-image-wrapper {
+    height: 220px;
+  }
 }
 
-.read-more:hover {
-  border-color: #e67e22;
+@media (max-width: 768px) {
+  .varanasi-offer-section {
+    padding: 25px 20px 40px;
+  }
+  .varanasi-offer-title {
+    font-size: 1.6rem;
+  }
+  .varanasi-offer-image-wrapper {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .varanasi-offer-grid {
+    gap: 25px;
+  }
+  .varanasi-offer-card {
+    border-radius: 10px;
+  }
+  .varanasi-offer-image-wrapper {
+    height: 180px;
+  }
+  .varanasi-offer-info {
+    padding: 15px;
+  }
+  .varanasi-offer-info h3 {
+    font-size: 1.1rem;
+  }
+  .varanasi-offer-info p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .varanasi-offer-section {
+    padding: 20px 15px 35px;
+  }
+  .varanasi-offer-title {
+    font-size: 1.5rem;
+  }
+  .varanasi-offer-image-wrapper {
+    height: 160px;
+  }
 }

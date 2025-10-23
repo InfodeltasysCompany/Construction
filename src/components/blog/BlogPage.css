@@ -1,0 +1,491 @@
+/* BlogPage.css */
+
+/* ===== MAIN BANNER SECTION ===== */
+.main-banner {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+  position: relative;
+  overflow: hidden;
+  color: #1a202c;
+  padding-top: 80px;
+}
+
+.banner-container {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.banner-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.brand-identifier {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  padding: 12px 25px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+  font-size: 1rem;
+}
+
+.primary-heading {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 30px;
+  line-height: 1.2;
+}
+
+.dynamic-text {
+  color: #4299e1;
+  display: inline-block;
+  animation: textTransition 3s ease-in-out infinite;
+  min-height: 1.2em;
+}
+
+@keyframes textTransition {
+  0% { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  20%, 80% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+  100% { 
+    opacity: 0; 
+    transform: translateY(-20px); 
+  }
+}
+
+.supporting-text {
+  max-width: 650px;
+  margin: 0 auto 50px;
+  color: #4a5568;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.achievement-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-bottom: 50px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.metric-item {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 30px 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  text-align: center;
+}
+
+.metric-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.metric-value {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #4299e1;
+  margin-bottom: 8px;
+  line-height: 1;
+  display: block;
+}
+
+.metric-description {
+  color: #718096;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+}
+
+.scroll-prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #718096;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 30px;
+}
+
+.scroll-track {
+  width: 2px;
+  height: 50px;
+  background: rgba(113, 128, 150, 0.3);
+  margin-top: 12px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.scroll-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: #4299e1;
+  border-radius: 2px;
+  animation: scrollAnimation 2s ease-in-out infinite;
+}
+
+@keyframes scrollAnimation {
+  0% { 
+    transform: translateY(-20px); 
+    opacity: 0; 
+  }
+  50% { 
+    opacity: 1; 
+  }
+  100% { 
+    transform: translateY(50px); 
+    opacity: 0; 
+  }
+}
+
+/* ===== VALUE PROPOSITION SECTION ===== */
+.value-proposition {
+  padding: 0;
+  background: linear-gradient(135deg, #ffffff, #f7fafc);
+  position: relative;
+}
+
+.value-proposition .content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-tag {
+  display: inline-block;
+  color: #4299e1;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+  background: rgba(66, 153, 225, 0.1);
+  padding: 6px 16px;
+  border-radius: 20px;
+}
+
+.section-intro h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.section-intro p {
+  font-size: 1.1rem;
+  color: #718096;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 0;
+}
+
+.benefit-card {
+  background: white;
+  padding: 35px 25px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  position: relative;
+  overflow: hidden;
+}
+
+.benefit-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(135deg, #4299e1, #667eea);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.benefit-card:hover::before {
+  transform: scaleX(1);
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-icon {
+  font-size: 2.8rem;
+  margin-bottom: 18px;
+  display: block;
+}
+
+.benefit-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 12px;
+}
+
+.benefit-card p {
+  color: #718096;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* ===== BACKGROUND ELEMENTS ===== */
+.background-elements {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.background-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      ellipse at 20% 20%,
+      rgba(66, 153, 225, 0.08) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 80% 80%,
+      rgba(159, 122, 234, 0.06) 0%,
+      transparent 60%
+    );
+}
+
+.floating-shapes .floating-shape {
+  position: absolute;
+  border-radius: 50%;
+  animation: shapeMovement 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.shape-one {
+  width: 280px;
+  height: 280px;
+  top: 10%;
+  left: 5%;
+  background: rgba(66, 153, 225, 0.1);
+}
+.shape-two {
+  width: 220px;
+  height: 220px;
+  top: 65%;
+  right: 8%;
+  background: rgba(72, 187, 120, 0.1);
+  animation-delay: 2s;
+}
+.shape-three {
+  width: 160px;
+  height: 160px;
+  bottom: 10%;
+  left: 12%;
+  background: rgba(237, 137, 54, 0.1);
+  animation-delay: 4s;
+}
+.shape-four {
+  width: 240px;
+  height: 240px;
+  top: 25%;
+  right: 15%;
+  background: rgba(159, 122, 234, 0.1);
+  animation-delay: 6s;
+}
+
+@keyframes shapeMovement {
+  0%, 100% { 
+    transform: translateY(0) rotate(0deg); 
+  }
+  50% { 
+    transform: translateY(-30px) rotate(5deg); 
+  }
+}
+
+/* ===== CONTENT SECTIONS ===== */
+.content-section {
+  width: 100%;
+  position: relative;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1200px) {
+  .achievement-metrics {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 600px;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-banner {
+    padding-top: 70px;
+    min-height: 90vh;
+  }
+  
+  .banner-container {
+    padding: 0 15px;
+  }
+  
+  .banner-content {
+    padding: 30px 0;
+  }
+  
+  .primary-heading {
+    font-size: 2.3rem;
+    margin-bottom: 20px;
+  }
+  
+  .supporting-text {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+  }
+  
+  .brand-identifier {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+  }
+  
+  .achievement-metrics {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    max-width: 300px;
+  }
+  
+  .metric-item {
+    padding: 25px 15px;
+  }
+  
+  .metric-value {
+    font-size: 2.2rem;
+  }
+  
+  .value-proposition .content-container {
+    padding: 0 15px;
+  }
+  
+  .section-intro {
+    margin-bottom: 30px;
+  }
+  
+  .section-intro h2 {
+    font-size: 2.2rem;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-top: 0;
+  }
+  
+  .benefit-card {
+    padding: 25px 20px;
+  }
+  
+  .benefit-icon {
+    font-size: 2.3rem;
+    margin-bottom: 15px;
+  }
+  
+  .benefit-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-banner {
+    padding-top: 60px;
+  }
+  
+  .primary-heading {
+    font-size: 2rem;
+  }
+  
+  .supporting-text {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+  
+  .brand-identifier {
+    font-size: 0.85rem;
+    padding: 8px 16px;
+  }
+  
+  .metric-value {
+    font-size: 2rem;
+  }
+  
+  .scroll-prompt {
+    font-size: 0.8rem;
+  }
+  
+  .section-intro h2 {
+    font-size: 1.8rem;
+  }
+  
+  .section-intro p {
+    font-size: 1rem;
+  }
+  
+  .benefit-card {
+    padding: 20px 15px;
+  }
+  
+  .benefit-icon {
+    font-size: 2rem;
+  }
+}

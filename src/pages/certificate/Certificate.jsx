@@ -1,25 +1,96 @@
-import React from 'react';
-import './Certificate.css';
-import certificateImage from '../assets/certificate.png'; // Update the path based on your project structure
+import React from "react";
+import "./Certificate.css";
+
+import udyamCertificate from "../../assets/1.png";
+import gstCertificate from "../../assets/2.png";
+
+const certificates = [
+  {
+    id: 1,
+    title: "Udyam Registration Certificate",
+    desc: (
+      <>
+        K D Construction & Consultants has been officially registered under the{" "}
+        <strong>Ministry of Micro, Small and Medium Enterprises (MSME)</strong>,
+        Government of India.
+      </>
+    ),
+    details: (
+      <>
+        <strong>Registration No:</strong> UDYAM-UP-75-0023191 <br />
+        <strong>Date of Registration:</strong> 24/03/2022 <br />
+        <strong>Type of Enterprise:</strong> Micro (Services)
+      </>
+    ),
+    img: udyamCertificate,
+    pdfName: "Udyam-Certificate.pdf",
+  },
+  {
+    id: 2,
+    title: "GST Registration Certificate",
+    desc: (
+      <>
+        K D Construction & Consultants is registered under the{" "}
+        <strong>Goods and Services Tax (GST) Act, 2017</strong>.
+      </>
+    ),
+    details: (
+      <>
+        <strong>Registration No:</strong> 09ANKPS3888F1ZA <br />
+        <strong>Legal Name:</strong> Divyendu Singh <br />
+        <strong>Date of Issue:</strong> 22/06/2023
+      </>
+    ),
+    img: gstCertificate,
+    pdfName: "GST-Certificate.pdf",
+  },
+];
 
 const Certificate = () => {
-  return (
-    <section className="certificate-section">
-      <div className="certificate-container">
-        <div className="certificate-image">
-          <img
-            src={certificateImage}
-            alt="ISO 9001:2015 Certificate"
-          />
-        </div>
+  // Function to download all certificates
+  const downloadAllCertificates = () => {
+    certificates.forEach((cert) => {
+      const link = document.createElement("a");
+      link.href = cert.img;
+      link.download = cert.pdfName;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  };
 
-        <div className="certificate-text">
-          <span className="label">CERTIFICATE</span>
-          <h2>ISO 9001:2015</h2>
-          <p>
-            Antonovich Group has Quality Management system certificate that proves our high level of services,
-            compliance with modern standards of quality.
-          </p>
+  return (
+    <section className="award-section">
+      <div className="award-container">
+        {certificates.map((cert, index) => (
+          <div
+            key={cert.id}
+            className={`award-box ${index % 2 === 0 ? "normal" : "reverse"}`}
+          >
+            <div className="award-text">
+              <span className="label">CERTIFICATE</span>
+              <h2>{cert.title}</h2>
+              <p>{cert.desc}</p>
+              <p>{cert.details}</p>
+              <a
+                href={cert.img}
+                download={cert.pdfName}
+                className="download-btn"
+              >
+                Download PDF
+              </a>
+            </div>
+            <div className="award-image">
+              <img src={cert.img} alt={cert.title} />
+            </div>
+          </div>
+        ))}
+
+        {/* ✅ Download All Button at Bottom */}
+        <div className="download-all-container">
+          <button onClick={downloadAllCertificates} className="download-all-btn">
+            ⬇ Download All Certificates
+          </button>
         </div>
       </div>
     </section>

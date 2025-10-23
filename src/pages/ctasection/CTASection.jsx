@@ -1,5 +1,5 @@
-// CTASection.jsx
 import React from "react";
+import { Link } from "react-router-dom"; // Import Link
 import "./CTASection.css";
 
 const CTASection = () => {
@@ -11,9 +11,9 @@ const CTASection = () => {
           Modern, functional interiors with a touch of Varanasi heritage. 
           Sophisticated designs that leave a lasting impression.
         </p>
-        <button className="cta-button">
+        <Link to="/contactform" className="cta-button">
           🚀 Get Started Today
-        </button>
+        </Link>
       </div>
     </section>
   );

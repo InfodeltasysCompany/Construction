@@ -1,14 +1,15 @@
 /* Section Wrapper */
 .services-section {
   padding: 60px 20px;
-  background: #fdfdfd;
+  background: #f9fafb;
   text-align: center;
+  margin-top: -5%;
 }
 
 .services-title {
   font-size: 32px;
   font-weight: 700;
-  color: #b9732f;
+  color: #0a0501;
   margin-bottom: 50px;
 }
 

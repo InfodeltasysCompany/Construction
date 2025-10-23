@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center; /* vertical centering */
   padding: 80px 20px;
-  background: linear-gradient(145deg, #f7f9fb, #e2eaf1);
+  background: #f9fafb;
   font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
   min-height: 100vh; /* ensures vertical centering for large screens */

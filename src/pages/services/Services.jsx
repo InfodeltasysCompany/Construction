@@ -8,6 +8,12 @@ import construction from '../../assets/construction.png';
 import furnishing from '../../assets/furnishing.png';
 
 const servicesData = [
+    {
+    title: 'Construction',
+    icon: '🏠',
+    image: construction,
+    text: `K.D. Constructions & Consultants undertakes complete construction projects in Varanasi, from foundations to finishing. We follow strict quality standards and manage every stage of construction, delivering safe, durable, and aesthetically pleasing structures.`,
+  },
   {
     title: 'Interior Design',
     icon: '🛋️',
@@ -20,12 +26,7 @@ const servicesData = [
     image: fitout,
     text: `Our fit-out services provide seamless execution for homes, offices, and commercial spaces in Varanasi. K.D. Constructions & Consultants ensures precise implementation with attention to detail, quality materials, and timely completion of every project.`,
   },
-  {
-    title: 'Construction',
-    icon: '🏠',
-    image: construction,
-    text: `K.D. Constructions & Consultants undertakes complete construction projects in Varanasi, from foundations to finishing. We follow strict quality standards and manage every stage of construction, delivering safe, durable, and aesthetically pleasing structures.`,
-  },
+
   {
     title: 'Furnishing & Interiors',
     icon: '🪑',
@@ -39,8 +40,7 @@ const Services = () => {
     <section className="services-section">
       <h2 className="services-heading">Our services</h2>
       <p className="services-subheading">
-        Antonovich Group offers full turnkey services for residential & commercial
-        projects, providing interior design, construction and fit-out solutions.
+        K.D. Constructions & Consultants delivers comprehensive solutions for residential and commercial projects, covering every stage from interior design and construction to complete fit-out execution.
       </p>
 
       {servicesData.map((service, index) => (

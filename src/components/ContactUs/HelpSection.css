@@ -2,17 +2,16 @@
 .help-section {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.45);
   width: 100%;
   height: 100%;
   display: flex;
@@ -22,38 +21,64 @@
 
 .help-text {
   color: #ffffff;
-  font-size: 3rem;
-  font-weight: bold;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
   text-align: center;
+  line-height: 1.2;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0 1rem;
 }
 
 /* Section 2: Contact Info with Image */
-.contact-container {
+.contact-section {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.contact-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem;
   gap: 3rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .contact-image-wrapper {
+  flex: 1 1 400px;
   background-color: #43b0e4;
   padding: 1.5rem;
-  max-width: 500px;
-  border-radius: 4px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.contact-image-wrapper:hover {
+  transform: scale(1.05);
 }
 
 .contact-image {
   width: 100%;
   height: auto;
+  border-radius: 6px;
   display: block;
-  border-radius: 2px;
 }
 
 .contact-text {
+  flex: 1 1 400px;
   max-width: 600px;
+}
+
+.contact-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.contact-text p {
   font-size: 1.1rem;
   line-height: 1.8;
   color: #333;
@@ -63,8 +88,42 @@
   color: #43b0e4;
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.2s ease;
 }
 
 .contact-text a:hover {
+  color: #1b7fb3;
   text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contact-content {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-text p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .help-text {
+    font-size: 2rem;
+  }
+
+  .contact-section {
+    padding: 3rem 1rem;
+  }
 }

@@ -1,103 +1,147 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Footer.css";
-import { FaTwitter, FaFacebookF, FaLinkedinIn, FaInstagram } from "react-icons/fa";
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import {
+  FaTwitter,
+  FaFacebookF,
+  FaLinkedinIn,
+  FaInstagram,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaWhatsapp,
+} from "react-icons/fa";
+import Logo from "../assets/logo.png";
 
 const Footer = () => {
+  const [showButtons, setShowButtons] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setShowButtons(window.scrollY > 200);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="footer">
-      <div className="footer-container">
-
-        {/* Left Section */}
-        <div className="footer-left">
-          <div className="footer-logo">
-            <span className="logo-icon">🏢</span>
-            <h2>WEBUILD</h2>
-          </div>
+      {/* Top Section */}
+      <div className="footer-top">
+        {/* About */}
+        <div className="footer-about">
+          <img src={Logo} alt="K.D. Constructions & Consultants Logo" />
+          <h2>K.D. Constructions & Consultants</h2>
           <p>
-            Aliquam sed elitr elitr erat sed diam ipsum eirmod eos lorem nonumy.
-            Tempor sea ipsum diam sed clita dolore eos dolores magna erat dolore
-            sed stet justo et dolor.
+            Delivering innovative construction and consultancy solutions with
+            precision and quality. From concept to completion — building trust
+            with every project.
           </p>
-          <ul className="footer-contact">
-            <li><FaMapMarkerAlt /> 123 Street, New York, USA</li>
-            <li><FaPhoneAlt /> +012 345 67890</li>
-            <li><FaEnvelope /> info@example.com</li>
-          </ul>
-
-          {/* Social icons */}
-          <div className="footer-social">
-            <a href="#"><FaTwitter /></a>
-            <a href="#"><FaFacebookF /></a>
-            <a href="#"><FaLinkedinIn /></a>
-            <a href="#"><FaInstagram /></a>
-          </div>
         </div>
 
-        {/* Divider */}
-        <div className="footer-divider"></div>
+        {/* Quick Links */}
+        <div className="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/construction">Our Services</a></li>
+            <li><a href="/projects">Projects</a></li>
+            <li><a href="/contactus">Contact</a></li>
+            <li><a href="/hoteldetail">Hotel Detail</a></li>
+          </ul>
+        </div>
 
-        {/* Right Section */}
-        <div className="footer-right">
-          <div className="footer-links-group">
-            <div className="footer-links">
-              <h3>QUICK LINKS</h3>
-              <ul>
-                <li><a href="#">› Home</a></li>
-                <li><a href="#">› About Us</a></li>
-                <li><a href="#">› Our Services</a></li>
-                <li><a href="#">› Meet The Team</a></li>
-                <li><a href="#">› Contact Us</a></li>
-              </ul>
-            </div>
+        {/* Policies */}
+        <div className="footer-links">
+          <h3>Policies</h3>
+          <ul>
+            <li><a href="/privacypolicy">Privacy Policy</a></li>
+            <li><a href="/termsconditions">Terms & Conditions</a></li>
+            <li><a href="/refundpolicy">Refund Policy</a></li>
+            <li><a href="/cookiepolicy">Cookie Policy</a></li>
+            <li><a href="/contactus">Support</a></li>
+          </ul>
+        </div>
+      </div>
 
-            <div className="footer-links">
-              <h3>POPULAR LINKS</h3>
-              <ul>
-                <li><a href="#">› Home</a></li>
-                <li><a href="#">› About Us</a></li>
-                <li><a href="#">› Our Services</a></li>
-                <li><a href="#">› Meet The Team</a></li>
-                <li><a href="#">› Contact Us</a></li>
-              </ul>
-            </div>
+      {/* Divider */}
+      <div className="footer-divider"></div>
 
-            <div className="footer-links">
-              <h3>POLICIES</h3>
-              <ul>
-                <li><a href="#">› Privacy Policy</a></li>
-                <li><a href="#">› Terms & Conditions</a></li>
-                <li><a href="#">› Refund Policy</a></li>
-                <li><a href="#">› Cookie Policy</a></li>
-                <li><a href="#">› Support</a></li>
-              </ul>
-            </div>
-          </div>
+      {/* Contact & Social */}
+      <div className="footer-contact-social">
+        <div className="footer-contact-container">
+          <h3 className="footer-contact-title">Our Address</h3>
+          <ul className="footer-contact">
+            <li>
+              <FaMapMarkerAlt />
+              <span>
+                B-30/2A-3, Prafful Nagar Colony, Lanka (Near HDFC Bank),
+                <br />
+                Varanasi, U.P. 221005
+              </span>
+            </li>
+            <li>
+              <FaPhoneAlt />
+              <span>+91 9919100744, +91 9335047679</span>
+            </li>
+            <li>
+              <FaEnvelope />
+              <span>divyenusingh72@gmail.com</span>
+            </li>
+          </ul>
+        </div>
 
-          {/* Newsletter */}
-          <div className="footer-newsletter">
-            <h3>NEWSLETTER</h3>
-            <form>
-              <input type="email" placeholder="Your Email Address" required />
-              <button type="submit">SIGN UP</button>
-            </form>
-          </div>
+        <div className="footer-social">
+          <a href="#"><FaTwitter /></a>
+          <a href="#"><FaFacebookF /></a>
+          <a href="#"><FaLinkedinIn /></a>
+          <a href="#"><FaInstagram /></a>
         </div>
       </div>
 
       {/* Bottom Bar */}
       <div className="footer-bottom">
         <p>
-          © <span>Your Site Name</span>. All Rights Reserved.
+          © {new Date().getFullYear()}{" "}
+          <span>K.D. Constructions & Consultants</span>. All Rights Reserved.
         </p>
-        <div className="footer-bottom-right">
-          Designed by <span>HTML Codex</span><br />
-          
-        </div>
+        <p className="footer-credit">Designed by InfoDeltaSys</p>
       </div>
 
-      {/* Back to Top Button */}
-      <a href="#" className="back-to-top">↑</a>
+      {/* Floating Buttons */}
+      {showButtons && (
+        <>
+          <a
+            href="#top"
+            onClick={scrollToTop}
+            className="back-to-top"
+            aria-label="Back to Top"
+          >
+            ↑
+          </a>
+
+          <a
+            href="https://wa.me/919919100744"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="whatsapp-btn"
+            aria-label="Chat on WhatsApp"
+          >
+            <FaWhatsapp />
+          </a>
+
+          <a
+            href="tel:+919919100744"
+            className="call-btn"
+            aria-label="Call Us"
+          >
+            <FaPhoneAlt />
+          </a>
+        </>
+      )}
     </footer>
   );
 };

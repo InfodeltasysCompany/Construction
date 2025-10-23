@@ -5,7 +5,7 @@
   gap: 40px;
   padding: 60px 50px;
   font-family: "Segoe UI", sans-serif;
-  background: #fff;
+  background: #f9fafb;
   flex-wrap: wrap;
 }
 
@@ -44,39 +44,32 @@
 /* Buttons */
 .controls {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   margin-top: 25px;
   flex-wrap: wrap;
+  border: none; /* Remove any accidental border */
 }
 
-.controls button {
-  background: linear-gradient(135deg, #06beb6, #48b1bf);
-  color: #fff;
-  padding: 10px 18px;
-  border: none;
-  border-radius: 8px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.controls button:hover {
-  background: linear-gradient(135deg, #04a29b, #3aa5ac);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(6, 190, 182, 0.35);
-}
-
+.control-btn,
 .controls .view-all {
-  background: #222;
-  padding: 10px 25px;
-  font-size: 15px;
+  display: inline-block;
+  padding: 14px 30px;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
   color: #fff;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  border: none; /* REMOVE border */
+  box-shadow: none; /* REMOVE shadow if unwanted */
+  outline: none; /* REMOVE focus outline */
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
+.control-btn:hover,
 .controls .view-all:hover {
-  background: #000;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 20px rgba(255, 126, 95, 0.4);
 }
 
 /* Right Carousel */
@@ -105,6 +98,7 @@
   height: 450px;
   object-fit: cover;
   border-radius: 20px;
+  display: block; /* remove any inline border/margin */
 }
 
 .card-overlay {
@@ -173,13 +167,9 @@
     height: 200px;
   }
 
-  .controls button {
-    padding: 8px 12px;
-    font-size: 14px;
-  }
-
+  .controls button,
   .controls .view-all {
     padding: 8px 16px;
-    font-size: 13px;
+    font-size: 14px;
   }
 }

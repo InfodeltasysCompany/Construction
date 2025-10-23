@@ -3,7 +3,7 @@ import "./AboutUs.css";
 import WhoWeAre from "../../pages/whowe/WhoWeAre";
 import Mission from "../../pages/mission/Mission";
 import ServicesSection from "../../pages/services/ServicesSection";
-import Award from "../../pages/award/Certificate";
+import Award from "../../pages/certificate/Certificate";
 
 // Import team images
 import img1 from "../../assets/1.png";
@@ -67,6 +67,7 @@ const AboutUs = () => {
   <ServicesSection />
 
   <Award />
+
 
   <Leaderprofile />
 

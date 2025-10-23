@@ -1,0 +1,322 @@
+/* PrivacyPolicy.css */
+
+/* Base Styles */
+.policy-content {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px 25px;
+  background-color: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.7;
+}
+
+/* Headings */
+.policy-content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #0b2239;
+  border-bottom: 2px solid #0b2239;
+  padding-bottom: 10px;
+}
+
+.policy-content h3 {
+  font-size: 1.3rem;
+  margin-top: 25px;
+  margin-bottom: 12px;
+  color: #0b3d91;
+}
+
+/* Paragraphs */
+.policy-content p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #444;
+}
+
+/* Lists */
+.policy-content ul {
+  margin: 10px 0 20px 20px;
+  list-style-type: disc;
+}
+
+.policy-content ul li {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+/* Contact Info */
+.policy-content p br {
+  line-height: 1.8;
+}
+
+/* Additional CSS for enhanced Cookie Policy */
+.policy-intro {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: #555;
+  font-style: italic;
+  border-left: 4px solid #1a5276;
+  padding-left: 1rem;
+}
+
+.cookie-table {
+  margin: 2rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cookie-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.cookie-table th {
+  background: linear-gradient(135deg, #1a5276 0%, #2c3e50 100%);
+  color: white;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.cookie-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  vertical-align: top;
+}
+
+.cookie-table tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.cookie-table tr:hover {
+  background-color: #e9ecef;
+}
+
+.contact-info {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #1a5276;
+  margin: 1rem 0;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+}
+
+.policy-content a {
+  color: #1a5276;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.policy-content a:hover {
+  text-decoration: underline;
+  color: #154360;
+}
+
+/* Additional CSS for Refund Policy */
+.cancellation-table {
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cancellation-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.cancellation-table th {
+  background: linear-gradient(135deg, #1a5276 0%, #2c3e50 100%);
+  color: white;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.cancellation-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e9ecef;
+  vertical-align: top;
+  font-size: 0.9rem;
+}
+
+.cancellation-table tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.cancellation-table tr:hover {
+  background-color: #e9ecef;
+}
+
+.policy-footer {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #1a5276;
+  margin-top: 2rem;
+  font-style: italic;
+}
+
+/* Additional CSS for Terms & Conditions */
+.contact-info {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #1a5276;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+.contact-info p {
+  margin: 0.4rem 0;
+}
+
+.policy-footer {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.policy-footer p {
+  margin: 0.5rem 0;
+  color: #495057;
+}
+
+/* Enhanced list styling for legal documents */
+.policy-content ul {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.policy-content li {
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+  position: relative;
+}
+
+.policy-content li:before {
+  content: "•";
+  color: #1a5276;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+/* Section numbering for better hierarchy */
+.policy-content h4 {
+  color: #2c3e50;
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-info {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .policy-footer {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-info {
+    padding: 0.75rem;
+    font-size: 0.85rem;
+  }
+  
+  .policy-footer {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+  .cancellation-table {
+    font-size: 0.85rem;
+  }
+  
+  .cancellation-table th,
+  .cancellation-table td {
+    padding: 0.75rem 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cancellation-table {
+    font-size: 0.8rem;
+  }
+  
+  .cancellation-table th,
+  .cancellation-table td {
+    padding: 0.5rem 0.25rem;
+  }
+  
+  .cancellation-table table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+/* Responsive table */
+@media (max-width: 768px) {
+  .cookie-table {
+    font-size: 0.9rem;
+  }
+  
+  .cookie-table th,
+  .cookie-table td {
+    padding: 0.75rem 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cookie-table {
+    font-size: 0.8rem;
+  }
+  
+  .cookie-table th,
+  .cookie-table td {
+    padding: 0.5rem 0.25rem;
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .policy-content {
+    padding: 20px 15px;
+  }
+
+  .policy-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .policy-content h3 {
+    font-size: 1.1rem;
+  }
+
+  .policy-content p,
+  .policy-content ul li {
+    font-size: 0.95rem;
+  }
+}

@@ -1,45 +1,53 @@
 import React from 'react';
 import './HelpSection.css';
-import backgroundImage from '../../assets/1.png'; // Make sure the path is correct
-import contactImage from '../../assets/2.png'; // Add your second image here
+import backgroundImage from '../../assets/contactus1.png';
+import contactImage from '../../assets/contactus2.png';
 import ContactForm from '../../pages/contact/ContactForm';
 
 const HelpSection = () => {
   return (
-    <div>
+    <main>
       {/* Section 1: Background Image with Text */}
-      <div
+      <section
         className="help-section"
         style={{ backgroundImage: `url(${backgroundImage})` }}
+        aria-label="How Can We Help Section"
       >
         <div className="overlay">
           <h1 className="help-text">How Can We Help?</h1>
         </div>
-      </div>
+      </section>
 
-      {/* Section 2: Contact Text + Image */}
-      <div className="contact-container">
-        <div className="contact-image-wrapper">
-          <img
-            src={contactImage}
-            alt="Team collaboration"
-            className="contact-image"
-          />
+      {/* Section 2: Contact Info */}
+      <section className="contact-section" aria-labelledby="contact-heading">
+        <div className="contact-content">
+          <figure className="contact-image-wrapper">
+            <img
+              src={contactImage}
+              alt="Team collaboration"
+              className="contact-image"
+              loading="lazy"
+            />
+          </figure>
+          <article className="contact-text">
+<h2 id="contact-heading">Connect with K.D. Constructions & Consultants</h2>
+<p>
+  At <strong>K.D. Constructions & Consultants</strong>, we believe that every great project begins with a strong partnership. 
+  With a proven presence across India, our team delivers <a href="#services">innovative construction</a>, 
+  <a href="#consulting">consulting</a>, and <a href="#design">design solutions</a> tailored to meet your goals. 
+  Whether you’re planning a new development, modernizing infrastructure, or seeking expert project guidance — 
+  we’re here to help turn your vision into reality.  
+  <br /><br />
+  Get in touch today to discuss your next project. 
+  Together, we’ll build spaces that stand the test of time and reflect true excellence.
+</p>
+
+          </article>
         </div>
-        <div className="contact-text">
-          <p>
-            With offices from the Space Coast to the West Coast, BRPH serves{' '}
-            <a href="#clients">clients</a> throughout the United States and more
-            than 20 countries. Give us a <a href="#call">call</a>, send us a
-            message or make plans for a visit. We’re excited to hear about your
-            project and talk about how we can work together to enhance your
-            mission and achieve your goals. Contact BRPH today!
-          </p>
-        </div>
-      </div>
+      </section>
 
       <ContactForm />
-    </div>
+    </main>
   );
 };
 

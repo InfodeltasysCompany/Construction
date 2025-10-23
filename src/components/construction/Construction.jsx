@@ -1,6 +1,6 @@
 import React from 'react';
 import './Construction.css';
-import Image1 from "../../assets/image (21).png";
+import Image1 from "../../assets/leading.png";
 import Image2 from "../../assets/2.png";
 import ConstructionCompanies from '../../pages/constructioncompanies/ConstructionCompanies';
 import ServicesGrid from "../../pages/services/ServicesGrid";

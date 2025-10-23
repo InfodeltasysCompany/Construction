@@ -1,0 +1,225 @@
+/* HotelDetail.css */
+
+.hotel-detail-section {
+  padding: 60px 20px;
+  background: #f9fafb;
+  color: #1e293b;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.hotel-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.hotel-badge {
+  display: inline-block;
+  background: #e2e8f0;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.hotel-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.hotel-tagline {
+  color: #475569;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.hotel-description {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Stats */
+.hotel-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 60px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e3a8a;
+}
+
+.stat-label {
+  color: #475569;
+  font-weight: 500;
+}
+
+/* Features */
+.features-section h2,
+.amenities-section h2,
+.offers-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #0f172a;
+}
+
+/* Display all feature cards in one row */
+.features-grid {
+  display: flex;
+  justify-content: space-between; /* Spread evenly */
+  gap: 25px;
+  flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.feature-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: 0.3s ease;
+  flex: 1; /* All cards take equal width */
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+}
+
+.feature-content h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Amenities */
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.amenity-item {
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.amenity-icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* Offers */
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.offer-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.offer-badge {
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  background: #dc2626;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+}
+
+/* ✅ UNIQUE CONTACT SECTION */
+.hotel-contact-section {
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color: #fff;
+  border-radius: 25px;
+  padding: 60px 20px;
+  margin-top: 40px;
+}
+
+.hotel-contact-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.hotel-contact-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.hotel-contact-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.hotel-contact-method {
+  text-align: center;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.hotel-contact-method:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.hotel-contact-icon {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hotel-contact-note {
+  font-size: 0.9rem;
+  color: #e2e8f0;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .features-grid {
+    flex-direction: column; /* Stack on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .hotel-header h1 { font-size: 2.2rem; }
+  .features-section h2,
+  .amenities-section h2,
+  .offers-section h2 { font-size: 2rem; }
+  .hotel-contact-header h2 { font-size: 2rem; }
+}

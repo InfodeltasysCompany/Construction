@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./LandmarkProjects.css";
+
 import dravyavatiImg from "../../assets/1.png";
 import nazrulImg from "../../assets/3.png";
 
@@ -33,9 +35,13 @@ const LandmarkProjects = () => {
           We are preferred cement suppliers for contractors, engineers, and architects, contributing to landmark projects across India.
         </span>
         <div className="controls">
-          <button onClick={prevSlide} aria-label="Previous project">&#10094;</button>
-          <button onClick={nextSlide} aria-label="Next project">&#10095;</button>
-          <button className="view-all">View All</button>
+          <button onClick={prevSlide} aria-label="Previous project" className="control-btn">&#10094;</button>
+          <button onClick={nextSlide} aria-label="Next project" className="control-btn">&#10095;</button>
+
+          {/* Modern Link styled as button */}
+          <Link to="/projects" className="control-btn view-all" aria-label="View all projects">
+            View All
+          </Link>
         </div>
       </div>
 

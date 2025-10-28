@@ -1,8 +1,16 @@
 import React from "react";
 import "./Certificate.css";
 
-import udyamCertificate from "../../assets/1.png";
-import gstCertificate from "../../assets/2.png";
+// Import images
+import udyamCertificateImg from "../../assets/udyam_certificate_img.jpg";
+import gstCertificateImg from "../../assets/gst_certificate_img.png";
+
+// Import PDFs
+import udyamPDF from "../../assets/udyam_certificate.pdf";
+import gstPDF from "../../assets/gst_certificate.pdf";
+
+// ✅ Import your single main download PDF
+import phoneListPDF from "../../assets/all_Certificate.pdf";
 
 const certificates = [
   {
@@ -22,8 +30,8 @@ const certificates = [
         <strong>Type of Enterprise:</strong> Micro (Services)
       </>
     ),
-    img: udyamCertificate,
-    pdfName: "Udyam-Certificate.pdf",
+    img: udyamCertificateImg,
+    pdf: udyamPDF,
   },
   {
     id: 2,
@@ -41,24 +49,12 @@ const certificates = [
         <strong>Date of Issue:</strong> 22/06/2023
       </>
     ),
-    img: gstCertificate,
-    pdfName: "GST-Certificate.pdf",
+    img: gstCertificateImg,
+    pdf: gstPDF,
   },
 ];
 
 const Certificate = () => {
-  // Function to download all certificates
-  const downloadAllCertificates = () => {
-    certificates.forEach((cert) => {
-      const link = document.createElement("a");
-      link.href = cert.img;
-      link.download = cert.pdfName;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    });
-  };
-
   return (
     <section className="award-section">
       <div className="award-container">
@@ -72,25 +68,35 @@ const Certificate = () => {
               <h2>{cert.title}</h2>
               <p>{cert.desc}</p>
               <p>{cert.details}</p>
-              <a
-                href={cert.img}
-                download={cert.pdfName}
+              <a 
+                href={cert.pdf} 
+                download 
                 className="download-btn"
+                aria-label={`Download ${cert.title} PDF`}
               >
-                Download PDF
+                ⬇ Download PDF
               </a>
             </div>
             <div className="award-image">
-              <img src={cert.img} alt={cert.title} />
+              <img 
+                src={cert.img} 
+                alt={cert.title} 
+                loading="lazy"
+              />
             </div>
           </div>
         ))}
 
-        {/* ✅ Download All Button at Bottom */}
-        <div className="download-all-container">
-          <button onClick={downloadAllCertificates} className="download-all-btn">
+        {/* ✅ Third Button for Single PDF Download */}
+        <div className="bottom-btn-container">
+          <a 
+            href={phoneListPDF} 
+            download 
+            className="simple-btn"
+            aria-label="Download All Certificates"
+          >
             ⬇ Download All Certificates
-          </button>
+          </a>
         </div>
       </div>
     </section>

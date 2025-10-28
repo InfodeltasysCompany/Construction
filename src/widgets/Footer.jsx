@@ -14,11 +14,25 @@ import Logo from "../assets/logo.png";
 
 const Footer = () => {
   const [showButtons, setShowButtons] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setShowButtons(window.scrollY > 200);
+    
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", checkMobile);
+    
+    // Initial check
+    checkMobile();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", checkMobile);
+    };
   }, []);
 
   const scrollToTop = (e) => {
@@ -111,8 +125,8 @@ const Footer = () => {
         <p className="footer-credit">Designed by InfoDeltaSys</p>
       </div>
 
-      {/* Floating Buttons */}
-      {showButtons && (
+      {/* Floating Buttons - Only show on mobile */}
+      {showButtons && isMobile && (
         <>
           <a
             href="#top"

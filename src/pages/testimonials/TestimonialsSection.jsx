@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './TestimonialsSection.css';
+import { Link } from "react-router-dom";
 
 const TestimonialsSection = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -79,7 +80,7 @@ const TestimonialsSection = () => {
     if (!isAutoPlaying) return;
 
     const interval = setInterval(() => {
-      setActiveTestimonial(prev => 
+      setActiveTestimonial(prev =>
         prev === testimonials.length - 1 ? 0 : prev + 1
       );
     }, 5000);
@@ -117,7 +118,7 @@ const TestimonialsSection = () => {
           <div className="testimonial-main">
             <div className="testimonial-card">
               <div className="quote-mark">"</div>
-              
+
               <div className="testimonial-text">
                 <p>{currentTestimonial.text}</p>
               </div>
@@ -161,25 +162,27 @@ const TestimonialsSection = () => {
             <div className="nav-header">
               <h3>Client Reviews</h3>
               <div className="nav-controls">
-                <button 
+                <button
                   className="nav-btn prev"
                   onClick={() => {
-                    setActiveTestimonial(prev => 
+                    setActiveTestimonial(prev =>
                       prev === 0 ? testimonials.length - 1 : prev - 1
                     );
                     setIsAutoPlaying(false);
                   }}
+                  aria-label="Previous testimonial"
                 >
                   ←
                 </button>
-                <button 
+                <button
                   className="nav-btn next"
                   onClick={() => {
-                    setActiveTestimonial(prev => 
+                    setActiveTestimonial(prev =>
                       prev === testimonials.length - 1 ? 0 : prev + 1
                     );
                     setIsAutoPlaying(false);
                   }}
+                  aria-label="Next testimonial"
                 >
                   →
                 </button>
@@ -239,15 +242,19 @@ const TestimonialsSection = () => {
             <h3>Ready to Become Our Next Success Story?</h3>
             <p>Join our satisfied clients and experience the K.D. Constructions difference</p>
             <div className="cta-buttons">
-              <button className="cta-btn primary">
+              <Link to="/contactform" className="cta-btn primary">
                 Start Your Project
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2"/>
+                  <path
+                    d="M5 12H19M19 12L12 5M19 12L12 19"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
                 </svg>
-              </button>
-              <button className="cta-btn secondary">
+              </Link>
+              <Link to="/about" className="cta-btn secondary">
                 View All Case Studies
-              </button>
+              </Link>
             </div>
           </div>
         </div>

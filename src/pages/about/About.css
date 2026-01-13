@@ -1,121 +1,311 @@
-.about-us-section {
-  padding: 50px 15px;
+/* About.css - Clean & Professional */
+
+.about-section {
+  padding: 40px 20px;
+  background: #fafafa;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.about-container {
   max-width: 1200px;
   margin: 0 auto;
-  font-family: "Poppins", sans-serif;
-  background: #f9fafb;
-}
-
-.about-us-content {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
   align-items: center;
 }
 
-.text-content {
-  flex: 1 1 50%;
+/* ===== Left Image Section ===== */
+.about-image {
+  position: relative;
 }
 
-.text-content h2 {
-  font-size: 32px;
-  font-weight: 600;
-  margin-bottom: 16px;
-  color: #1a1a1a;
+.image-wrapper {
+  position: relative;
+  /* border-radius: 12px; */
+  overflow: hidden;
+  /* box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  background: #f8fafc;
+  padding: 20px; */
 }
 
-.text-content p {
-  font-size: 15px;
-  color: #555;
-  line-height: 1.6;
-  margin-bottom: 12px;
-}
-
-.signature {
-  margin-top: 15px;
-  font-style: italic;
-  color: #333;
-}
-
-.signature strong {
-  font-weight: 600;
-}
-
-/* 🌍 Modern Button with Teal-Blue Gradient */
-.modern-btn {
-  margin-top: 20px;
-  padding: 12px 24px;
-  display: inline-block;
-  padding: 14px 30px;
-  background: linear-gradient(135deg, #ff7e5f, #feb47b);
-  color: #fff;
-  font-weight: 600;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  gap: 8px;
-  text-decoration: none;
-
-}
-
-.modern-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0px 8px 20px rgba(255, 126, 95, 0.4);
-}
-
-.arrow {
-  transition: transform 0.3s ease;
-}
-
-.modern-btn:hover .arrow {
-  transform: translateX(4px);
-}
-
-.image-content {
-  flex: 1 1 45%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.image-content img {
+.image-main {
   width: 100%;
-  max-width: 420px;
-  border-radius: 16px;
-  object-fit: cover;
-  box-shadow: 0 10px 25px rgba(72, 177, 191, 0.15);
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.image-wrapper:hover .image-main {
+  transform: scale(1.02);
+}
+
+/* .image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 85%, rgba(11, 79, 108, 0.05));
+  pointer-events: none;
+} */
+
+/* Company Info */
+.company-info {
+  margin-top: 30px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.company-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.company-info p {
+  font-size: 14px;
+  color: #0b4f6c;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* ===== Right Content Section ===== */
+.about-content {
+  padding: 20px 0;
+}
+
+/* Section Header */
+.section-header {
+  margin-bottom: 30px;
+}
+
+.section-label {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0b4f6c;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.section-label::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background: #0b4f6c;
+}
+
+.header-line {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, #e5e7eb, transparent);
+  margin-top: 15px;
+}
+
+/* Main Heading */
+.main-heading {
+  font-size: 42px;
+  line-height: 1.2;
+  color: #111827;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.heading-highlight {
+  color: #0b4f6c;
+  position: relative;
+  display: inline-block;
+}
+
+.heading-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: rgba(11, 79, 108, 0.15);
+  z-index: -1;
+  transition: height 0.3s ease;
+}
+
+.main-heading:hover .heading-highlight::after {
+  height: 12px;
+}
+
+/* Content */
+.content-wrapper {
+  margin-bottom: 40px;
+}
+
+.lead-paragraph {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+/* Features List */
+.features-list {
+  margin: 30px 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  opacity: 0;
+  transform: translateX(-10px);
+  animation: slideIn 0.5s ease forwards;
+}
+
+.feature-item:nth-child(1) { animation-delay: 0.1s; }
+.feature-item:nth-child(2) { animation-delay: 0.2s; }
+.feature-item:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.feature-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background: #0b4f6c;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.feature-text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #4b5563;
+}
+
+.feature-text strong {
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.closing-paragraph {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #6b7280;
+  font-style: italic;
+  border-left: 3px solid #0b4f6c;
+  padding-left: 20px;
+  margin-top: 30px;
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: #1f2937;
+  color: white;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none; 
+}
+
+/* Keep all other CSS rules the same */
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.cta-button:hover {
+  background: #0b4f6c;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(11, 79, 108, 0.2);
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+.cta-button svg {
   transition: transform 0.3s ease;
 }
 
-.image-content img:hover {
-  transform: scale(1.04);
+.cta-button:hover svg {
+  transform: translateX(5px);
 }
 
-/* Responsive */
+/* ===== Responsive Design ===== */
+
 @media (max-width: 768px) {
-  .about-us-content {
-    flex-direction: column;
+  .about-section {
+    padding: 60px 20px;
   }
-
-  .image-content {
-    order: -1;
-  }
-
-  .text-content,
-  .image-content {
-    flex: 1 1 100%;
+  
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
     text-align: center;
   }
-
-  .text-content h2 {
-    font-size: 26px;
+  
+  .main-heading {
+    font-size: 32px;
   }
 
-  .text-content p {
-    font-size: 14px;
+  .section-label::after {
+    left: 50%;
+    transform: translateX(-50%);
   }
+  
+  .feature-item {
+    text-align: left;
+  }
+  
+  .cta-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
 
-  .image-content img {
-    max-width: 100%;
+@media (max-width: 480px) {
+  .main-heading {
+    font-size: 28px;
   }
+  
+  .lead-paragraph {
+    font-size: 16px;
+  }
+  
+  .company-info h3 {
+    font-size: 16px;
+  }
+  
+
 }

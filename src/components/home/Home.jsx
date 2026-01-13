@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
+
 import Service from "../../pages/services/Services";
 import Vision from "../../pages/vision/Vision";
 import About from "../../pages/about/About";
@@ -8,10 +9,13 @@ import LandmarkProjects from "../../pages/projectshandled/LandmarkProjects";
 import BlogSection from "../../pages/blogsection/BlogSection";
 import HotelDetail from "../../pages/hoteldetail/HotelDetail";
 
+import { ImagesApp } from "../../assets/ImagesApp";
+
+// ✅ banners from ImagesApp
 const banners = [
-  require("../../assets/banner1.png"),
-  require("../../assets/banner2.png"),
-  require("../../assets/banner3.png"),
+  ImagesApp.KdBanner1,
+  ImagesApp.KdBanner2,
+
 ];
 
 const Home = () => {
@@ -21,24 +25,35 @@ const Home = () => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % banners.length);
     }, 5000);
+
     return () => clearInterval(interval);
   }, []);
 
   return (
     <main>
       {/* ===== Banner Section ===== */}
-      <section className="home-banner-section" aria-label="K.D. Constructions Banner">
+      <section
+        className="home-banner-section"
+        aria-label="K.D. Constructions Banner"
+      >
         <div className="home-banner-slideshow">
           {banners.map((banner, index) => (
             <div
               key={index}
-              className={`home-banner-slide ${index === current ? "active" : ""}`}
+              className={`home-banner-slide ${
+                index === current ? "active" : ""
+              }`}
             >
               <img src={banner} alt={`Banner ${index + 1}`} />
             </div>
           ))}
         </div>
-        <a href="#home-introduction" className="home-scroll-down" aria-label="Scroll down">
+
+        <a
+          href="#home-introduction"
+          className="home-scroll-down"
+          aria-label="Scroll down"
+        >
           ↓
         </a>
       </section>
@@ -48,7 +63,7 @@ const Home = () => {
         <div className="home-intro-overlay"></div>
         <div className="home-intro-content">
           <h1>
-            K.D. <span>Constructions <br /> & <br />Consultants</span>
+            K.D. <span>Constructions <br /> & <br /> Consultants</span>
           </h1>
           <h2>Building Dreams Across India</h2>
           <p>

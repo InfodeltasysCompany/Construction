@@ -1,7 +1,7 @@
 import React from 'react';
 import './Construction.css';
-import Image1 from "../../assets/leading.png";
-import Image2 from "../../assets/2.png";
+import { ImagesApp } from "../../assets/ImagesApp";
+import ServicesSection from "../../pages/services/ServicesSection";
 import ConstructionCompanies from '../../pages/constructioncompanies/ConstructionCompanies';
 import ServicesGrid from "../../pages/services/ServicesGrid";
 import CompanyIntro from '../../pages/services/CompanyIntro';
@@ -23,8 +23,8 @@ const Construction = () => {
           </p>
         </div>
         <div className="hero-images">
-          <img src={Image1} alt="Modern construction site in Varanasi" className="hero-img hero-img-left" />
-          <img src={Image2} alt="Construction workers executing project" className="hero-img hero-img-right" />
+          <img src={ImagesApp.LeadingImg} alt="Modern construction site in Varanasi" className="hero-img hero-img-left" />
+          <img src={ImagesApp.Bgall1} alt="Construction workers executing project" className="hero-img hero-img-right" />
         </div>
       </div>
 
@@ -67,6 +67,7 @@ const Construction = () => {
       </div>
 
       <ConstructionCompanies />
+        <ServicesSection />
       <ServicesGrid />
       <CompanyIntro />
       <OfferSection />

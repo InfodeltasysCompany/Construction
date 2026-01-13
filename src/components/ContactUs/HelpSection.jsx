@@ -1,52 +1,60 @@
-import React from 'react';
-import './HelpSection.css';
-import backgroundImage from '../../assets/contactus1.png';
-import contactImage from '../../assets/contactus2.png';
-import ContactForm from '../../pages/contact/ContactForm';
+import React from "react";
+import "./HelpSection.css";
+import { ImagesApp } from "../../assets/ImagesApp";
+import ContactForm from "../../pages/contact/ContactForm";
+import { FiPhone, FiMail, FiMapPin } from "react-icons/fi";
 
 const HelpSection = () => {
   return (
-    <main>
-      {/* Section 1: Background Image with Text */}
+    <main className="helpElite">
+
+      {/* HERO */}
       <section
-        className="help-section"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-        aria-label="How Can We Help Section"
+        className="helpElite-hero"
+        style={{ backgroundImage: `url(${ImagesApp.ContactUsImg1})` }}
       >
-        <div className="overlay">
-          <h1 className="help-text">How Can We Help?</h1>
+        <div className="helpElite-overlay">
+          <div className="heroElite-content">
+            <h1>Building Trust. Creating Landmarks.</h1>
+            <p>Construction & Consulting Services Across India</p>
+          </div>
         </div>
       </section>
 
-      {/* Section 2: Contact Info */}
-      <section className="contact-section" aria-labelledby="contact-heading">
-        <div className="contact-content">
-          <figure className="contact-image-wrapper">
-            <img
-              src={contactImage}
-              alt="Team collaboration"
-              className="contact-image"
-              loading="lazy"
-            />
-          </figure>
-          <article className="contact-text">
-<h2 id="contact-heading">Connect with K.D. Constructions & Consultants</h2>
-<p>
-  At <strong>K.D. Constructions & Consultants</strong>, we believe that every great project begins with a strong partnership. 
-  With a proven presence across India, our team delivers <a href="#services">innovative construction</a>, 
-  <a href="#consulting">consulting</a>, and <a href="#design">design solutions</a> tailored to meet your goals. 
-  Whether you’re planning a new development, modernizing infrastructure, or seeking expert project guidance — 
-  we’re here to help turn your vision into reality.  
-  <br /><br />
-  Get in touch today to discuss your next project. 
-  Together, we’ll build spaces that stand the test of time and reflect true excellence.
-</p>
+      {/* INFO */}
+      <section className="helpElite-info">
+        <div className="helpElite-grid">
 
-          </article>
+          <div className="helpElite-text">
+            <h2>K.D. Constructions & Consultants</h2>
+            <p>
+              We deliver premium construction and consultancy services using
+              modern technology, quality materials and expert engineering.
+            </p>
+
+            <div className="helpElite-contacts">
+              <div><FiPhone /> +91 98765 43210</div>
+              <div><FiMail /> info@kdconstructions.com</div>
+              <div><FiMapPin /> Mumbai, Maharashtra</div>
+            </div>
+          </div>
+
+          <div className="helpElite-image">
+            <img src={ImagesApp.ContactUsImg2} alt="Construction" />
+          </div>
+
         </div>
       </section>
 
-      <ContactForm />
+      {/* FORM */}
+      <section className="helpElite-form">
+        <div className="formWrap">
+          <h2>Let’s Work Together</h2>
+          <p>Share your project details and our team will contact you.</p>
+          <ContactForm />
+        </div>
+      </section>
+
     </main>
   );
 };

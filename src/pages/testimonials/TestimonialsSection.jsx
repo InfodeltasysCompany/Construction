@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './TestimonialsSection.css';
+import { Link } from "react-router-dom";
+// Import all client images
+import { ImagesApp } from "../../assets/ImagesApp";
 
 const TestimonialsSection = () => {
   const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -12,8 +15,8 @@ const TestimonialsSection = () => {
       position: "Director, Heritage Institute of Medical Sciences",
       company: "Heritage Hospitals Ltd.",
       project: "Hospital Building Construction",
-      value: "₹15 Crores",
-      image: "/client-heritage.jpg",
+      value: "₹1500 Lakhs",
+      image: ImagesApp.TeamImages1,
       rating: 5,
       text: "K.D. Constructions delivered our hospital project with exceptional professionalism. Their understanding of medical facility requirements and attention to detail in MEP systems was impressive. The project was completed on time despite complex requirements.",
       features: ["On-time Delivery", "Medical Grade Quality", "Budget Management"]
@@ -24,8 +27,8 @@ const TestimonialsSection = () => {
       position: "Chairman, Aryan International School",
       company: "Aryan Education Group",
       project: "School Campus Development",
-      value: "₹18 Crores",
-      image: "/client-aryan.jpg",
+      value: "₹2300 Lakhs",
+      image: ImagesApp.TeamImages2,
       rating: 5,
       text: "Working with Er. Divyendu Singh and his team was a remarkable experience. They understood our vision for an educational institution and delivered beyond expectations. The campus stands as a testament to their engineering excellence.",
       features: ["Vision Alignment", "Quality Construction", "Timely Completion"]
@@ -37,31 +40,31 @@ const TestimonialsSection = () => {
       company: "Taj Hotels",
       project: "Banquet Hall Construction",
       value: "₹4.1 Crores",
-      image: "/client-taj.jpg",
+      image: ImagesApp.TeamImages3,
       rating: 5,
       text: "The banquet hall construction at Taj Ganges exceeded our luxury standards. Their team's attention to acoustic design and premium finishes matched international hotel standards. A truly professional partnership.",
       features: ["Luxury Standards", "Acoustic Excellence", "Premium Finishes"]
     },
     {
       id: 4,
-      name: "Mr. Sanjay Agrahari",
+      name: "Mr. Ritesh",
       position: "Managing Director",
-      company: "Pracheta Constructive Pvt. Ltd.",
-      project: "Multiple Residential Projects",
-      value: "₹50+ Crores",
-      image: "/client-pracheta.jpg",
+      company: "Indian Railway.",
+      project: "Waiting Hall & Rest Room at Varanasi Cantt Station",
+      value: "₹150 Lakhs",
+      image: ImagesApp.TeamImages4,
       rating: 5,
       text: "We've partnered with K.D. Constructions for multiple residential projects. Their structural expertise and project management have been invaluable. They consistently deliver quality that earns buyer trust.",
       features: ["Structural Expertise", "Trusted Partnership", "Quality Assurance"]
     },
     {
       id: 5,
-      name: "Bank of India",
+      name: "Dr. S.D. Singh",
       position: "Chief Manager",
-      company: "Valuation Department",
-      project: "Property Valuation Services",
-      value: "Various Projects",
-      image: "/client-bank.jpg",
+      company: "Hotel Ganges Grand",
+      project: "Hotel Ganges Grand",
+      value: "₹90 Lakhs",
+      image: ImagesApp.TeamImages5,
       rating: 5,
       text: "As empaneled valuers, K.D. Constructions has provided accurate and reliable property valuations. Their technical knowledge and market understanding make them trusted advisors for our lending decisions.",
       features: ["Technical Accuracy", "Market Knowledge", "Reliable Service"]
@@ -79,7 +82,7 @@ const TestimonialsSection = () => {
     if (!isAutoPlaying) return;
 
     const interval = setInterval(() => {
-      setActiveTestimonial(prev => 
+      setActiveTestimonial(prev =>
         prev === testimonials.length - 1 ? 0 : prev + 1
       );
     }, 5000);
@@ -117,7 +120,7 @@ const TestimonialsSection = () => {
           <div className="testimonial-main">
             <div className="testimonial-card">
               <div className="quote-mark">"</div>
-              
+
               <div className="testimonial-text">
                 <p>{currentTestimonial.text}</p>
               </div>
@@ -161,25 +164,27 @@ const TestimonialsSection = () => {
             <div className="nav-header">
               <h3>Client Reviews</h3>
               <div className="nav-controls">
-                <button 
+                <button
                   className="nav-btn prev"
                   onClick={() => {
-                    setActiveTestimonial(prev => 
+                    setActiveTestimonial(prev =>
                       prev === 0 ? testimonials.length - 1 : prev - 1
                     );
                     setIsAutoPlaying(false);
                   }}
+                  aria-label="Previous testimonial"
                 >
                   ←
                 </button>
-                <button 
+                <button
                   className="nav-btn next"
                   onClick={() => {
-                    setActiveTestimonial(prev => 
+                    setActiveTestimonial(prev =>
                       prev === testimonials.length - 1 ? 0 : prev + 1
                     );
                     setIsAutoPlaying(false);
                   }}
+                  aria-label="Next testimonial"
                 >
                   →
                 </button>
@@ -239,15 +244,19 @@ const TestimonialsSection = () => {
             <h3>Ready to Become Our Next Success Story?</h3>
             <p>Join our satisfied clients and experience the K.D. Constructions difference</p>
             <div className="cta-buttons">
-              <button className="cta-btn primary">
+              <Link to="/contactform" className="cta-btn primary">
                 Start Your Project
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2"/>
+                  <path
+                    d="M5 12H19M19 12L12 5M19 12L12 19"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
                 </svg>
-              </button>
-              <button className="cta-btn secondary">
+              </Link>
+              <Link to="/about" className="cta-btn secondary">
                 View All Case Studies
-              </button>
+              </Link>
             </div>
           </div>
         </div>

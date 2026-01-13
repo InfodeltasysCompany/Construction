@@ -1,9 +1,9 @@
 import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./BlogSection.css";
-import blogBg from "../../assets/1.png"; // Replace with your image
+import { ImagesApp } from "../../assets/ImagesApp";
 
-const blogs = [
+const insightData = [
   {
     title: "Established Expertise Since 2000",
     content:
@@ -17,84 +17,93 @@ const blogs = [
   {
     title: "Skilled Team",
     content:
-      "A technically competent team including civil engineers, architects, charted accountant, and supervisory staff ensures high-quality execution.",
+      "A technically competent team including civil engineers, architects, chartered accountant, and supervisory staff ensures quality execution.",
   },
   {
     title: "Advanced Equipment",
     content:
-      "Equipped with AutoCAD, Etabs, Staad Pro, concrete mixers, vibrators, generators, and other modern construction machinery for precise work.",
+      "Equipped with AutoCAD, Etabs, Staad Pro, concrete mixers, vibrators, generators, and modern machinery.",
   },
   {
     title: "Registered & Empaneled",
     content:
-      "Registered with Varanasi Vikash Pradhikaran, U.P. Awas Vikas Parishad, GST, Income Tax Department, and empaneled with top banks as a registered valuer.",
+      "Registered with Varanasi Vikas Pradhikaran, U.P. Awas Vikas Parishad, GST, Income Tax, and top banks.",
   },
 ];
 
 const BlogSection = () => {
-  const carouselRef = useRef(null);
+  const sliderRef = useRef(null);
 
-  // Auto scroll function
   useEffect(() => {
-    const interval = setInterval(scrollNext, 3000);
-    return () => clearInterval(interval);
+    const auto = setInterval(handleNext, 3000);
+    return () => clearInterval(auto);
   }, []);
 
-  const scrollNext = () => {
-    if (carouselRef.current) {
-      const cardWidth = carouselRef.current.children[0].offsetWidth + 20; // 20 = gap
-      const maxScroll =
-        carouselRef.current.scrollWidth - carouselRef.current.offsetWidth;
-      if (carouselRef.current.scrollLeft >= maxScroll) {
-        carouselRef.current.scrollTo({ left: 0, behavior: "smooth" });
-      } else {
-        carouselRef.current.scrollBy({ left: cardWidth, behavior: "smooth" });
-      }
-    }
+  const handleNext = () => {
+    if (!sliderRef.current) return;
+
+    const cardWidth = sliderRef.current.children[0].offsetWidth + 20;
+    const maxScroll =
+      sliderRef.current.scrollWidth - sliderRef.current.offsetWidth;
+
+    sliderRef.current.scrollLeft >= maxScroll
+      ? sliderRef.current.scrollTo({ left: 0, behavior: "smooth" })
+      : sliderRef.current.scrollBy({ left: cardWidth, behavior: "smooth" });
   };
 
-  const scrollPrev = () => {
-    if (carouselRef.current) {
-      const cardWidth = carouselRef.current.children[0].offsetWidth + 20;
-      if (carouselRef.current.scrollLeft === 0) {
-        const maxScroll =
-          carouselRef.current.scrollWidth - carouselRef.current.offsetWidth;
-        carouselRef.current.scrollTo({ left: maxScroll, behavior: "smooth" });
-      } else {
-        carouselRef.current.scrollBy({ left: -cardWidth, behavior: "smooth" });
-      }
-    }
+  const handlePrev = () => {
+    if (!sliderRef.current) return;
+
+    const cardWidth = sliderRef.current.children[0].offsetWidth + 20;
+
+    sliderRef.current.scrollLeft === 0
+      ? sliderRef.current.scrollTo({
+          left:
+            sliderRef.current.scrollWidth -
+            sliderRef.current.offsetWidth,
+          behavior: "smooth",
+        })
+      : sliderRef.current.scrollBy({ left: -cardWidth, behavior: "smooth" });
   };
 
   return (
-    <section className="blog-section">
-      <h2 className="blog-title">
-        <span className="highlight">Blo</span>gs
+    <section className="ix-wrapper">
+      <h2 className="ix-title">
+        <span>Ins</span>ights
       </h2>
-      <p className="blog-subtitle">
-        We are leading cement manufacturers with a wide range of solutions
-        crafted by experts keeping in mind a home-builder’s needs.
+
+      <p className="ix-subtitle">
+        Expert-driven construction solutions built on trust, quality, and
+        experience.
       </p>
 
-      <div className="carousel-container" ref={carouselRef}>
-        {blogs.map((blog, index) => (
+      <div className="ix-slider" ref={sliderRef}>
+        {insightData.map((item, index) => (
           <article
             key={index}
-            className="blog-card"
-            style={{ "--bg-image": `url(${blogBg})` }}
+            className="ix-card"
+            style={{ "--ix-bg": `url(${ImagesApp.Bgall})` }}
           >
-            <div className="card-content">
-              <h3>{blog.title}</h3>
-              <p>{blog.content}</p>
+            <div className="ix-card-content">
+              <h3>{item.title}</h3>
+              <p>{item.content}</p>
             </div>
           </article>
         ))}
       </div>
 
-      <div className="carousel-controls">
-        <button className="nav-btn" onClick={scrollPrev}>&lt;</button>
-        <Link to="/blog" className="view-all-btn">View All Blogs</Link>
-        <button className="nav-btn" onClick={scrollNext}>&gt;</button>
+      <div className="ix-actions">
+        <button onClick={handlePrev} className="ix-btn">
+          ‹
+        </button>
+
+        <Link to="/blog" className="ix-link">
+          View All Blogs
+        </Link>
+
+        <button onClick={handleNext} className="ix-btn">
+          ›
+        </button>
       </div>
     </section>
   );

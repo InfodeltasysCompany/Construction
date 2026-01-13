@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "../widgets/Navbar";
 import Footer from "../widgets/Footer";
 import BlogPage from "../components/blog/BlogPage";
+import ErrorBoundary from '../components/ErrorBoundary';
+import ScrollToTop from "../components/ScrollToTop";
+
 
 const Home = lazy(() => import("../components/home/Home"));
 const AboutUs = lazy(() => import("../components/aboutus/AboutUs"));
@@ -11,7 +14,7 @@ const ContactUs = lazy(() => import("../components/ContactUs/HelpSection"));
 const OfferSection = lazy(() => import("../pages/offer/OfferSection"));
 const Projects = lazy(() => import("../pages/project/Projects"));
 const ServicesGrid = lazy(() => import("../pages/services/ServicesGrid"));
-const AwardSection = lazy(() => import("../pages/certificate/Certificate"));
+const Certificate = lazy(() => import("../pages/certificate/Certificate"));
 const ProjectsHandled = lazy(() => import("../pages/projectshandled/ProjectsHandled"));
 const CookiePolicy = lazy(() => import("../pages/policies/CookiePolicy"));
 const PrivacyPolicy = lazy(() => import("../pages/policies/PrivacyPolicy"));
@@ -34,11 +37,12 @@ const ContactForm = lazy(() => import("../pages/contact/ContactForm"));
 
 function index() {
   return (
-    <>
+    <ErrorBoundary>
       <Router>
 
 
         <Suspense fallback={<div>Loading page...</div>}>
+          <ScrollToTop />
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -48,7 +52,7 @@ function index() {
             <Route path="/offersection" element={<OfferSection />} />
             <Route path="/projects" element={< Projects />} />
             <Route path="/servicesgrid" element={< ServicesGrid />} />
-            <Route path="/awardsection" element={< AwardSection />} />
+            <Route path="/certificate" element={< Certificate />} />
             <Route path="/projectshandled" element={< ProjectsHandled />} />
 
             <Route path="/cookiepolicy" element={< CookiePolicy />} />
@@ -59,26 +63,15 @@ function index() {
              <Route path="/hoteldetail" element={< HotelDetail />} /> 
              <Route path="/leaderprofile" element={< LeaderProfile />} /> 
               <Route path="/contactform" element={<  ContactForm />} /> 
-
-
-             ContactForm
-           
-
-
-
-             
-
-             
-            
-
-
           </Routes>
         </Suspense>
         <Footer />
       </Router>
-    </>
+    </ErrorBoundary>
 
   );
 }
 
 export default index;
+
+

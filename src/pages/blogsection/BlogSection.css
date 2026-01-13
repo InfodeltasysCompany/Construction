@@ -1,155 +1,124 @@
-.blog-section {
+.ix-wrapper {
+  padding: 60px 20px;
   text-align: center;
-  padding: 50px 20px;
-  background: linear-gradient(135deg, #f0f2f5, #e0e7ff);
-  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  font-family: "Inter", sans-serif;
 }
 
-.blog-title {
-  font-size: 36px;
-  font-weight: 700;
+.ix-title {
+  font-size: 38px;
+  font-weight: 800;
   margin-bottom: 10px;
-  background: black;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
-.blog-subtitle {
-  font-size: 16px;
-  color: #555;
+.ix-title span {
+  color: #6366f1;
+}
+
+.ix-subtitle {
   max-width: 700px;
-  margin: 0 auto 40px auto;
+  margin: 0 auto 40px;
+  color: #4b5563;
+  font-size: 16px;
 }
 
-/* Carousel */
-.carousel-container {
+/* Slider */
+.ix-slider {
   display: flex;
+  gap: 20px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  gap: 20px;
   padding-bottom: 20px;
-  scrollbar-width: none;
 }
-.carousel-container::-webkit-scrollbar {
+.ix-slider::-webkit-scrollbar {
   display: none;
 }
 
-.blog-card {
+/* Card */
+.ix-card {
   flex: 0 0 300px;
   scroll-snap-align: start;
-  background: linear-gradient(145deg, #7b5cf5, #596983);
-  border-radius: 20px;
-  padding: 20px;
+  border-radius: 22px;
+  padding: 22px;
+  background: linear-gradient(145deg, #6366f1, #4f46e5);
   position: relative;
-  transition: transform 0.4s ease;
-  cursor: pointer;
   overflow: hidden;
+  transition: transform 0.4s ease;
 }
-.blog-card:hover {
+
+.ix-card:hover {
   transform: scale(1.05);
 }
-.blog-card::before {
+
+.ix-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
-              var(--bg-image) no-repeat center/cover;
+  background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    var(--ix-bg) center / cover no-repeat;
   opacity: 0;
   transition: opacity 0.4s ease;
-  border-radius: 20px;
-  z-index: 0;
 }
-.blog-card:hover::before {
+
+.ix-card:hover::before {
   opacity: 1;
 }
 
-.card-content {
+.ix-card-content {
   position: relative;
-  z-index: 1;
-}
-.blog-card h3 {
-  font-size: 20px;
-  margin-bottom: 12px;
-  font-weight: 600;
-  color: #fff;
-}
-.blog-card p {
-  font-size: 14px;
-  color: #f3f4f6;
-  line-height: 1.6;
+  z-index: 2;
 }
 
-/* Controls */
-.carousel-controls {
+.ix-card-content h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.ix-card-content p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+
+/* Actions */
+.ix-actions {
+  margin-top: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
-  margin-top: 20px;
-  flex-wrap: nowrap;
 }
 
-.nav-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 14px 20px;
-  min-width: 50px;
-  font-size: 18px;
-  background: linear-gradient(135deg, #ff7e5f, #feb47b);
-  color: #fff;
-  font-weight: 600;
-  border-radius: 50px;
+.ix-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
   border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-.nav-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0px 8px 20px rgba(255, 126, 95, 0.4);
-}
-
-.view-all-btn {
-  padding: 14px 30px;
+  font-size: 20px;
   background: linear-gradient(135deg, #ff7e5f, #feb47b);
   color: #fff;
-  font-weight: 600;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: all 0.3s ease;
+  cursor: pointer;
 }
-.view-all-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0px 8px 20px rgba(255, 126, 95, 0.4);
+
+.ix-link {
+  padding: 14px 32px;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
-  .blog-card {
-    flex: 0 0 250px;
-  }
-}
-
 @media (max-width: 768px) {
-  .carousel-container {
-    gap: 15px;
-    max-width: 100%;
+  .ix-card {
+    flex: 0 0 85%;
   }
-  .blog-card {
-    flex: 0 0 80%;
-    margin: 0 auto;
-    padding: 15px;
-    border-radius: 16px;
-  }
-  .blog-card h3 { font-size: 18px; }
-  .blog-card p { font-size: 13px; }
-  .carousel-controls {
-    gap: 10px;
-  }
-  .nav-btn { padding: 10px 16px; font-size: 16px; }
-  .view-all-btn { padding: 10px 20px; font-size: 14px; }
 }
 
 @media (max-width: 480px) {
-  .blog-card { flex: 0 0 90%; }
+  .ix-card {
+    flex: 0 0 90%;
+  }
 }

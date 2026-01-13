@@ -2,8 +2,8 @@ import React from "react";
 import "./ConstructionCompanies.css";
 
 // Import your images
-import Img1 from "../../assets/1.png"; 
-import Img2 from "../../assets/2.png"; 
+import { ImagesApp } from "../../assets/ImagesApp";
+
 
 const ConstructionCompanies = () => {
   return (
@@ -12,7 +12,7 @@ const ConstructionCompanies = () => {
       {/* Card 1 */}
       <div className="company-card">
         <div className="company-image">
-          <img src={Img1} alt="Construction Companies India" />
+          <img src={ImagesApp.Bgall1} alt="Construction Companies India" />
         </div>
         <div className="company-text">
           <h2 className="company-header">Top 20 Construction Companies in Varanasi & India</h2>
@@ -25,7 +25,7 @@ const ConstructionCompanies = () => {
       {/* Card 2 */}
       <div className="company-card reverse">
         <div className="company-image">
-          <img src={Img2} alt="Best Construction Companies India" />
+          <img src={ImagesApp.Bgall1} alt="Best Construction Companies India" />
         </div>
         <div className="company-text">
           <h2 className="company-header">Excellence in Construction & Consultancy</h2>

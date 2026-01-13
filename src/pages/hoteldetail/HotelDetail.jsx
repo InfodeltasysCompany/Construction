@@ -4,14 +4,14 @@ import "./HotelDetail.css";
 
 const HotelDetail = () => {
   const hotelInfo = {
-    name: "K.D. Grand Hotel & Resorts",
+    name: "Kashi Pilgrimage",
     tagline: "Luxury Redefined in Varanasi",
     description:
-      "Experience unparalleled luxury and authentic Indian hospitality at K.D. Grand Hotel & Resorts. Located in the spiritual capital of India, we offer world-class amenities with traditional warmth.",
-    established: "2015",
-    rooms: "45",
+      "Experience unparalleled luxury and authentic Indian hospitality at Kashi Pilgrimage. Located in the spiritual capital of India, we offer world-class amenities with traditional warmth.",
+    established: "2020",
+    rooms: "09",
     rating: "4.8/5",
-    location: "Varanasi, Uttar Pradesh",
+    location: "B 30/2-A-3, Prafful Nagar Colony Lanka Varanasi,U.P",
   };
 
   const hotelFeatures = [
@@ -125,14 +125,14 @@ const HotelDetail = () => {
               <div className="hotel-contact-method">
                 <div className="hotel-contact-icon">📞</div>
                 <h4>Call Us</h4>
-                <p>+91 98765 43210</p>
+                <p>+91  99191 00744</p>
                 <span className="hotel-contact-note">24/7 Support</span>
               </div>
 
               <div className="hotel-contact-method">
                 <div className="hotel-contact-icon">📧</div>
                 <h4>Email Us</h4>
-                <p>reservations@kdgrandhotel.com</p>
+                <p>divyendusingh72@gmail.com</p>
                 <span className="hotel-contact-note">Response within 2 hours</span>
               </div>
 

@@ -1,60 +1,91 @@
-import React from 'react';
-import './About.css';
+import React from "react";
 import { Link } from "react-router-dom";
-import aboutImage from '../../assets/1.png'; // Replace with your actual image
+import "./About.css";
+import { ImagesApp } from "../../assets/ImagesApp";
 
-const AboutUs = () => {
+const About = () => {
   return (
-    <section className="about-us-section" aria-labelledby="about-heading">
-      <div className="about-us-content">
+    <section className="about-section">
+      <div className="about-container">
+        {/* Left Image */}
+        <div className="about-image">
+          <div className="image-wrapper">
+            <img 
+              src={ImagesApp.LogoImg} 
+              alt="K.D. Constructions & Consultants Pvt Ltd" 
+              className="image-main"
+            />
+            <div className="image-overlay"></div>
+          </div>
 
-        {/* Image Content */}
-        <div className="image-content">
-          <img
-            src={aboutImage}
-            alt="K.D. Constructions & Consultant’s"
-            loading="lazy"
-          />
+          {/* Company Info */}
+          <div className="company-info">
+            <h3>K.D. Constructions & Consultants Pvt. Ltd.</h3>
+            <p>Building Excellence Since 2000</p>
+          </div>
         </div>
 
-        {/* Text Content */}
-        <div className="text-content">
-          <h2 id="about-heading">K.D. Constructions & Consultant’s</h2>
+        {/* Right Content */}
+        <div className="about-content">
+          {/* Section Header */}
+          <div className="section-header">
+            <span className="section-label">About Us</span>
+            <div className="header-line"></div>
+          </div>
 
-          <p>
-            <strong>K.D. Constructions & Consultants</strong> is a premier firm based in
-            Varanasi, India, specializing in structural design, planning, interior design,
-            and civil/mechanical consultancy.
-          </p>
-          <p>
-            Established in 2000 by <strong>Er. Divyendu Singh</strong>, the firm focuses
-            on analyzing requirements and delivering cost-effective solutions without
-            compromising quality. We provide architectural and engineering services under
-            one roof, ensuring complete satisfaction for government, semi-government,
-            public, and private projects.
-          </p>
-          <p>
-            Over the years, <strong>Er. Divyendu Singh</strong> has successfully completed
-            numerous consultancy works in architecture and engineering, consistently
-            fulfilling client needs with precision and integrity.
-          </p>
+          {/* Main Heading */}
+          <h2 className="main-heading">
+            Credibility is built
+            <br />
+            <span className="heading-highlight">day by day</span>
+          </h2>
 
-          <p className="signature">
-            <strong>Er. Divyendu Singh</strong><br />
-            <span>
-              Founder & Chief Consultant of K.D. Constructions & Consultants, Varanasi
-            </span>
-          </p>
+          {/* Content */}
+          <div className="content-wrapper">
+            <p className="lead-paragraph">
+              K.D. Constructions & Consultants stands firmly on the trust 
+              placed by our valued patrons. We honor this trust by consistently
+              delivering structurally sound and cost-effective projects.
+            </p>
 
-          {/* Modern CTA Button */}
-          <Link to="/leaderprofile" className="modern-btn" aria-label="Read more about K.D. Constructions">
-            Read More <span className="arrow">→</span>
+            <div className="features-list">
+              <div className="feature-item">
+                <div className="feature-icon">✓</div>
+                <div className="feature-text">
+                  <strong>Experienced Team</strong> - Skilled architects and engineers
+                </div>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon">✓</div>
+                <div className="feature-text">
+                  <strong>Quality Focus</strong> - Modern amenities & natural elements
+                </div>
+              </div>
+              <div className="feature-item">
+                <div className="feature-icon">✓</div>
+                <div className="feature-text">
+                  <strong>Timely Delivery</strong> - Core strength since inception
+                </div>
+              </div>
+            </div>
+
+            <p className="closing-paragraph">
+              Our commitment to excellence and client satisfaction drives every
+              project we undertake, ensuring lasting value and reliability.
+            </p>
+          </div>
+
+          {/* CTA Button - Using Link component for React Router */}
+          <Link to="/about" className="cta-button">
+            <span>Discover More</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
           </Link>
         </div>
-
       </div>
     </section>
   );
 };
 
-export default AboutUs;
+export default About;

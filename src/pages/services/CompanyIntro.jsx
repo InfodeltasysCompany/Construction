@@ -1,6 +1,6 @@
 import React from "react";
 import "./CompanyIntro.css";
-import companyImage from "../../assets/1.png"; // replace with your image path
+import { ImagesApp } from "../../assets/ImagesApp";
 
 const CompanyIntro = () => {
   return (
@@ -8,7 +8,7 @@ const CompanyIntro = () => {
       {/* ----------- Top Section (Image + Text) ----------- */}
       <div className="intro-top">
         <div className="image-wrapper">
-          <img src={companyImage} alt="Company Overview" />
+          <img src={ImagesApp.AboutImg1} alt="Company Overview" />
         </div>
 
         <div className="text-content">

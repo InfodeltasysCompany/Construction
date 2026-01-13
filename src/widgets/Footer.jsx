@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Footer.css";
 import {
-  FaTwitter,
   FaFacebookF,
   FaLinkedinIn,
   FaInstagram,
@@ -11,18 +10,30 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import Logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const [showButtons, setShowButtons] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setShowButtons(window.scrollY > 200);
+
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", checkMobile);
+    checkMobile();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", checkMobile);
+    };
   }, []);
 
-  const scrollToTop = (e) => {
-    e.preventDefault();
+  const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -45,12 +56,12 @@ const Footer = () => {
         <div className="footer-links">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/construction">Our Services</a></li>
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/contactus">Contact</a></li>
-            <li><a href="/hoteldetail">Hotel Detail</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/construction">Our Services</Link></li>
+            <li><Link to="/projects">Projects</Link></li>
+            <li><Link to="/contactus">Contact</Link></li>
+            <li><Link to="/hoteldetail">Hotel Detail</Link></li>
           </ul>
         </div>
 
@@ -58,16 +69,15 @@ const Footer = () => {
         <div className="footer-links">
           <h3>Policies</h3>
           <ul>
-            <li><a href="/privacypolicy">Privacy Policy</a></li>
-            <li><a href="/termsconditions">Terms & Conditions</a></li>
-            <li><a href="/refundpolicy">Refund Policy</a></li>
-            <li><a href="/cookiepolicy">Cookie Policy</a></li>
-            <li><a href="/contactus">Support</a></li>
+            <li><Link to="/privacypolicy">Privacy Policy</Link></li>
+            <li><Link to="/termsconditions">Terms & Conditions</Link></li>
+            <li><Link to="/refundpolicy">Refund Policy</Link></li>
+            <li><Link to="/cookiepolicy">Cookie Policy</Link></li>
+            <li><Link to="/contactus">Support</Link></li>
           </ul>
         </div>
       </div>
 
-      {/* Divider */}
       <div className="footer-divider"></div>
 
       {/* Contact & Social */}
@@ -89,57 +99,54 @@ const Footer = () => {
             </li>
             <li>
               <FaEnvelope />
-              <span>divyenusingh72@gmail.com</span>
+              <span>divyendusingh72@gmail.com</span>
             </li>
           </ul>
         </div>
 
         <div className="footer-social">
-          <a href="#"><FaTwitter /></a>
-          <a href="#"><FaFacebookF /></a>
-          <a href="#"><FaLinkedinIn /></a>
-          <a href="#"><FaInstagram /></a>
+          <Link to="https://www.facebook.com/share/17m8z9BrsY/" target="_blank" rel="noreferrer"><FaFacebookF /></Link>
+          <Link to="https://www.linkedin.com/in/divyendu-singh-028bb52a8" target="_blank" rel="noreferrer"><FaLinkedinIn /></Link>
+          <Link to="https://www.instagram.com/divyendu.singh.33" target="_blank" rel="noreferrer"><FaInstagram /></Link>
         </div>
       </div>
 
       {/* Bottom Bar */}
       <div className="footer-bottom">
         <p>
-          © {new Date().getFullYear()}{" "}
-          <span>K.D. Constructions & Consultants</span>. All Rights Reserved.
+          © {new Date().getFullYear()} <span>K.D. Constructions & Consultants</span>. All Rights Reserved.
         </p>
         <p className="footer-credit">Designed by InfoDeltaSys</p>
       </div>
 
-      {/* Floating Buttons */}
-      {showButtons && (
+      {/* Floating Buttons (Mobile only) */}
+      {showButtons && isMobile && (
         <>
-          <a
-            href="#top"
+          <button
             onClick={scrollToTop}
             className="back-to-top"
             aria-label="Back to Top"
           >
             ↑
-          </a>
+          </button>
 
-          <a
-            href="https://wa.me/919919100744"
+          <Link
+            to="https://wa.me/919919100744"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noreferrer"
             className="whatsapp-btn"
             aria-label="Chat on WhatsApp"
           >
             <FaWhatsapp />
-          </a>
+          </Link>
 
-          <a
-            href="tel:+919919100744"
+          <Link
+            to="tel:+919919100744"
             className="call-btn"
             aria-label="Call Us"
           >
             <FaPhoneAlt />
-          </a>
+          </Link>
         </>
       )}
     </footer>

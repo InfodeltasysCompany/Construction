@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./BlogPage.css";
-import Projects from "../../pages/project/Projects";
-import ProjectsHandled from "../../pages/projectshandled/ProjectsHandled";
-import Services from "../../pages/services/Services";
 import TestimonialsSection from "../../pages/testimonials/TestimonialsSection";
-import Certifcate from "../../pages/certificate/Certificate";
-import HotelDetail from "../../pages/hoteldetail/HotelDetail";
+import Gallery from "../../pages/gallery/Gallery";
 
 const BlogPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -135,29 +131,18 @@ const BlogPage = () => {
 
       {/* Project Showcase Section */}
       <section className="content-section">
-         <HotelDetail />
+         <Gallery />
       </section>
 
-      {/* Portfolio Section */}
-      <section className="content-section">
-        <Projects />
-        <ProjectsHandled />
-      </section>
 
-      {/* Services Overview Section */}
-      <section className="content-section">
-        <Services />
-      </section>
+
 
       {/* Client Feedback Section */}
       <section className="content-section">
         <TestimonialsSection />
       </section>
 
-      {/* Credentials Section */}
-      <section className="content-section">
-        <Certifcate />
-      </section>
+
     </>
   );
 };

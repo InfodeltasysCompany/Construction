@@ -1,43 +1,44 @@
-import React from 'react';
-import './Projects.css';
+import React from "react";
+import "./Projects.css";
 
-// Sample data (replace with your actual images)
+import { ImagesApp } from "../../assets/ImagesApp";
+
 const projects = [
   {
-    title: '22 Carat Villa Palm Jumeirah',
-    image: require('../../assets/1.png'),
+    title: "Residential Home",
+    image: ImagesApp.Project1Img,
   },
   {
-    title: 'W Residences The Palm Jumeirah',
-    image: require('../../assets/2.png'),
+    title: "Commercial Complex, Varanasi",
+    image: ImagesApp.Project2Img,
   },
   {
-    title: 'Royal Atlantis Apartment',
-    image: require('../../assets/3.png'),
+    title: "Residential Building, Kanpur",
+    image: ImagesApp.Project3Img,
   },
   {
-    title: 'Bvlgari Residences Jumeirah Bay',
-    image: require('../../assets/1.png'),
+    title: "Aryan School Campus, Mughalsarai",
+    image: ImagesApp.Project4Img,
   },
   {
-    title: 'Meydan Villas',
-    image: require('../../assets/2.png'),
+    title: "Temple",
+    image: ImagesApp.Project5Img,
   },
   {
-    title: 'Keturah Reserve at Meydan',
-    image: require('../../assets/3.png'),
+    title: "Kamla Residency",
+    image: ImagesApp.Project6Img,
   },
   {
-    title: 'Al Barari Villas',
-    image: require('../../assets/2.png'),
+    title: "Construction of New PSS Switchyard, Varanasi",
+    image: ImagesApp.Project7Img,
   },
   {
-    title: 'Sobha Hartland Luxury Villas & Apartment Dubai',
-    image: require('../../assets/1.png'),
+    title: "Waiting Hall & Rest Room, Varanasi",
+    image: ImagesApp.Project8Img,
   },
   {
-    title: 'Dubai Hills Luxury Villa',
-    image: require('../../assets/3.png'),
+    title: "Construction of Hotel Building, Varanasi",
+    image: ImagesApp.Project9Img,
   },
 ];
 

@@ -1,39 +1,47 @@
 import React from "react";
 import "./LeaderProfile.css";
-import leaderImg from "../../assets/3.png"; // Replace with actual image
+import { ImagesApp } from "../../assets/ImagesApp";
 
 const LeaderProfile = () => {
   return (
-    <section className="leader-section-centered">
-      <div className="leader-container-centered">
-
-        {/* Image Section */}
-        <div className="leader-image-centered">
-          <img src={leaderImg} alt="Er. Divyendu Singh" />
+    <section className="founder-section">
+      <div className="founder-container">
+        
+        {/* Founder Image */}
+        <div className="founder-image">
+          <img src={ImagesApp.AboutImg} alt="Er. Divyendu Singh" />
         </div>
 
-        {/* Text Section */}
-        <div className="leader-text-centered">
-          <h2>K.D. Constructions & Consultant’s</h2>
-          <h4>
-            Structural Designers, Planners, Interior Designers, Valuers, Builders, Government Contractors (Civil/Mechanical)
-          </h4>
+        {/* Founder Information */}
+        <div className="founder-info">
+          <h3>Founder & Managing Director</h3>
+          <h2>Er. Divyendu Singh</h2>
+          <p className="qualification">M.Tech – Structural Engineering</p>
+          
+          <div className="founder-details">
+            <p>
+              Established <strong>K.D. Constructions & Consultants Pvt. Ltd.</strong> in 2000 
+              with a vision to create a construction firm that stands on the pillars of 
+              integrity, quality, and timely delivery.
+            </p>
+            
+            <p>
+              With over <strong>25 years of experience</strong> in structural engineering 
+              and construction management, he has built the company into a trusted name 
+              in government contracts and private construction projects.
+            </p>
+            
+            <p>
+              His leadership ensures every project combines <strong>structural excellence</strong> 
+              with <strong>cost-effective solutions</strong>, maintaining the highest standards 
+              of quality and client satisfaction.
+            </p>
+          </div>
 
-          <p>
-            Established in 2000 by <strong>Er. Divyendu Singh (M.Tech – Structure)</strong>, K.D. Constructions & Consultant’s provides comprehensive architectural, structural, and engineering services under one roof. We focus on delivering economical, functional, and sustainable solutions tailored to client needs.
-          </p>
-
-          <p>
-            <strong>Vision:</strong> Excellence in construction and consultancy, leveraging expert teams and advanced project management.
-          </p>
-
-          <p>
-            <strong>Registrations & Empanelments:</strong> Varanasi Vikash Pradhikaran, U.P. Awas Vikas Parishad, EPF, Labour Office U.P., GST Department, Income Tax Department, Punjab National Bank & Bank of India.
-          </p>
-
-          <p>
-            <strong>Key Personnel & Equipment:</strong> Civil and architectural engineers, chartered accountants, skilled supervisors, and advanced machinery for quality construction.
-          </p>
+          {/* Contact/CTA */}
+          <div className="founder-contact">
+            <p className="contact-note">Leading with expertise since 2000</p>
+          </div>
         </div>
 
       </div>

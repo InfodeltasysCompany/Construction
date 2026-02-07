@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes, FaPhoneAlt } from "react-icons/fa";
-import logo from "../assets/logo.png";
+import { ImagesApp } from "../assets/ImagesApp";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -39,7 +39,7 @@ const Navbar = () => {
         {/* Logo */}
         <div className="logo">
           <Link to="/" aria-label="Company Home" onClick={closeMenu}>
-            <img src={logo} alt="Company Logo" />
+            <img src={ImagesApp.LogoImg} alt="Company Logo" />
           </Link>
         </div>
 

@@ -24,9 +24,9 @@
   position: relative;
   /* border-radius: 12px; */
   overflow: hidden;
-  /* box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-  background: #f8fafc;
-  padding: 20px; */
+  /* box-shadow: 0 0px 0px rgba(68, 5, 240, 0.08); */
+  background: rgba(247, 239, 230 ,0.1);
+  /* padding: 20px; */
 }
 
 .image-main {

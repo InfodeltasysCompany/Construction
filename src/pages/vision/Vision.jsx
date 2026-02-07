@@ -58,9 +58,7 @@ const Vision = () => {
       <div className="vision-header">
         <h2 className="vision-main-heading">Our Vision</h2>
         <p className="vision-subheading">
-          As a leader in sustainable construction and architecture, we believe
-          in building for the future—where design meets responsibility, and
-          progress respects the planet.
+          As pioneers in sustainable construction and architecture, we build for the future—creating design solutions where innovation meets durability, shaping development toward a greener tomorrow.
         </p>
       </div>
 

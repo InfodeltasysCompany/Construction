@@ -13,7 +13,7 @@ import { ImagesApp } from "../../assets/ImagesApp";
 
 // ✅ banners from ImagesApp
 const banners = [
-  ImagesApp.KdBanner1,
+ 
   ImagesApp.KdBanner2,
 
 ];

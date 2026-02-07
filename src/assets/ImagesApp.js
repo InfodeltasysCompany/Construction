@@ -17,7 +17,7 @@ import AryanImg from "../assets/aryan.jpg";
 
 // ===== Banners =====
 import KdBanner1 from "../assets/banner1.jpeg";
-import KdBanner2 from "../assets/banner2.jpeg";
+import KdBanner2 from "../assets/banner2.png";
 
 
 // ===== Construction / Blog Images =====

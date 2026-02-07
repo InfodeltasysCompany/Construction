@@ -9,7 +9,7 @@ import {
   FaEnvelope,
   FaWhatsapp,
 } from "react-icons/fa";
-import Logo from "../assets/logo.png";
+import { ImagesApp } from "../assets/ImagesApp";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -43,7 +43,7 @@ const Footer = () => {
       <div className="footer-top">
         {/* About */}
         <div className="footer-about">
-          <img src={Logo} alt="K.D. Constructions & Consultants Logo" />
+          <img src={ImagesApp.LogoImg} alt="K.D. Constructions & Consultants Logo" />
           <h2>K.D. Constructions & Consultants</h2>
           <p>
             Delivering innovative construction and consultancy solutions with

@@ -16,10 +16,10 @@ const servicesData = [
     text: `K.D. Constructions & Consultants in Varanasi specializes in creating stylish and functional interiors for residential and commercial spaces. We focus on delivering elegant designs tailored to our clients’ needs, ensuring comfort, aesthetics, and modern functionality.`,
   },
   {
-    title: "Fit-Out",
+    title: "Renovation & Repairs:",
     icon: "🏗️",
     image: ImagesApp.FitOutImg,
-    text: `Our fit-out services provide seamless execution for homes, offices, and commercial spaces in Varanasi. K.D. Constructions & Consultants ensures precise implementation with attention to detail, quality materials, and timely completion of every project.`,
+    text: `Our Renovation & Repair services focus on creating efficient, future-ready interiors through smart design, sustainable materials, and precise execution—ensuring spaces that perform today and endure tomorrow.`,
   },
   {
     title: "Furnishing & Interiors",
